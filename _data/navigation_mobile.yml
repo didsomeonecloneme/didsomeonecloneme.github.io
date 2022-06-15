@@ -1,0 +1,17 @@
+# Mobile menu navigation links
+
+- title: Home
+  url: /
+
+- title: Examples
+  url: /examples/
+
+#- title: Blog
+#  url: /blog/
+
+#- title: Changelog
+#  url: /changelog-timeline/
+
+- title: Contact
+  url: /contact/
+  button: success

@@ -1,0 +1,80 @@
+<script>
+var website;
+var email;
+element = document.getElementById("b");
+element.addEventListener("click", formJS);
+document.addEventListener("keyup", formJS);
+
+function formJS(event) { 
+    if (event.keyCode === 13) {	
+      theJS();
+    } else if (typeof event.keyCode === 'undefined') {
+      theJS();
+    }
+};
+
+function theJS() {
+    if (typeof website == 'undefined') {
+           website = document.getElementById('search-hero').value;
+           document.getElementById('submitButton').innerHTML='<a id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem;">Create link</a>';
+           element = document.getElementById("b");
+	   element.addEventListener("click", formJS);
+        } else {
+           var email = document.getElementById('search-hero').value;
+        }
+
+        document.getElementById('search-hero').placeholder='Your email address';
+        document.getElementById('search-hero').value='';
+
+        var element = document.getElementById("search-hero");
+        element.classList.add("uk-animation-scale-up");
+        element.classList.add("uk-animation-slide-right-medium");
+
+        if (typeof website !== 'undefined' && typeof email !== 'undefined') {
+           var element = document.getElementById("hero");
+           element.classList.add("uk-animation-slide-right");
+           element.classList.add("uk-animation-reverse");
+
+           setTimeout(function(){
+           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3>Creating your link...</h3><p>Please wait a moment</p></div>';
+           element.classList.remove("uk-animation-reverse");
+           element.classList.remove("uk-animation-slide-right");
+           element.classList.add("uk-animation-scale-up");
+           element.classList.add("uk-animation-slide-right-medium");
+           if (website && email) {
+               console.log(website);
+               console.log(email);
+               generateLink(website, email);
+           }
+           }, 800);
+    }
+
+function generateLink(website, email) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == XMLHttpRequest.DONE) {
+         const obj = JSON.parse(xhr.responseText);
+         var element = document.getElementById("hero");
+	 if (xhr.status == 200) {
+           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Link created</h3><p>Your personal link is: <b><a href="#" id="link"></a></b></p><p>Follow these steps to activate your link:<ul><li>We\'ve send you an e-mail with a confirmation link, follow the e-mail instructions</li><li>Embed the link in your website, we\'ve published <a href="/examples">multiple examples here</a></li></ul></div>';
+       	   document.getElementById('link').href=obj.link;
+           document.getElementById('link').textContent=obj.link;
+         } else {
+           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Error occured</h3><p id="error"></p><p><a href="/">Try again</a></p></div>';
+           document.getElementById('error').innerText = obj.message;
+	}
+       var element = document.getElementById("hero");
+       element.classList.remove("uk-animation-scale-up");
+       element.classList.remove("uk-animation-slide-right-medium");
+       element.classList.add("uk-animation-slide-left");
+      }
+    }
+    var url = "https://dscm-api.azurewebsites.net/generatelink";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    var data = JSON.stringify({"mail": email, "site": website});
+    xhr.send(data);
+    }
+}
+</script>
