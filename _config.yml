@@ -43,7 +43,7 @@ social:
     instagram:
     linkedin:
     pinterest:
-    twitter:        https://twitter.com/dsomeonecloneme
+    twitter:        https://twitter.com/wesleyneelen
     vimeo:
     youtube:
 
@@ -51,7 +51,7 @@ social:
 share:
     post:           true # Display share buttons on a post page
     doc:            true # Display share buttons on a doc page
-    twitter:        didsomeonecloneme # Enable by adding Twitter handle 
+    twitter:        wesleyneelen # Enable by adding Twitter handle 
     facebook:       false # Enable by setting true (Facebook handle not required)
 
 # Default footer image settings
