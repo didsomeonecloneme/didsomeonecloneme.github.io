@@ -16,7 +16,7 @@ baseurl:            ""
 permalink:          /:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                ""
+url:                "https://didsomeoneclone.me"
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo:               
@@ -51,7 +51,7 @@ social:
 share:
     post:           true # Display share buttons on a post page
     doc:            true # Display share buttons on a doc page
-    twitter:        wesleyneelen # Enable by adding Twitter handle 
+    twitter:        # Enable by adding Twitter handle 
     facebook:       false # Enable by setting true (Facebook handle not required)
 
 # Default footer image settings
