@@ -8,10 +8,6 @@ layout: default
 
             <h1 class="uk-article-title">{{ page.title | escape }}</h1>
 
-            <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
-                {% include post-meta.html %}
-            </div>
-
             <div class="article-content link-primary">
                 {{ content }}
                 {% if site.share.post %}
