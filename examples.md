@@ -1,7 +1,8 @@
 ---
+layout: page
+width: xsmall
+permalink: /examples/
 title: Examples
-author: dscm
-categories: []
 ---
 
 This page contains multiple examples on how to embed the link into your website.
