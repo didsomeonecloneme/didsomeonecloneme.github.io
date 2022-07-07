@@ -6,7 +6,7 @@ title: Examples
 ---
 
 This page contains multiple examples on how to embed the link into your website.
-Place one of the examples in your website to activate the notification. Replace the ID <b>-382975673</b> in the examples with your ID.
+Insert one of the examples in your website to activate the notification. Replace the ID <b>-382975673</b> in the examples with your ID.
 
 #### IMG
 
@@ -38,3 +38,7 @@ var id = '-382975673';
 eval(js);
 </script>
 ```
+
+#### WordPress
+
+There is a plugin available <a href="https://wordpress.org/plugins/did-someone-clone-me/">here</a>.
