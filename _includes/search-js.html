@@ -1,6 +1,8 @@
 <script>
 var website;
 var email;
+
+const params = new URLSearchParams(window.location.search)
 element = document.getElementById("b");
 element.addEventListener("click", formJS);
 document.addEventListener("keyup", formJS);
@@ -42,8 +44,6 @@ function theJS() {
            element.classList.add("uk-animation-scale-up");
            element.classList.add("uk-animation-slide-right-medium");
            if (website && email) {
-               console.log(website);
-               console.log(email);
                generateLink(website, email);
            }
            }, 800);
@@ -69,7 +69,13 @@ function generateLink(website, email) {
        element.classList.add("uk-animation-slide-left");
       }
     }
-    var url = "https://api.didsomeoneclone.me/generatelink";
+    
+    if (params.get('test') == 'true') {
+	var url = "https://api-test.didsomeoneclone.me/generatelink";
+    } else {
+        var url = "https://api.didsomeoneclone.me/generatelink";
+    }
+
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
