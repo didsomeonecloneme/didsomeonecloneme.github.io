@@ -3,5 +3,7 @@ title: How does it work?
 categories: [presale]
 ---
 
-All you have to do is to generate a link and embed it into your website. We've published multiple examples on how to embed the link into your website here:
-<a href="/examples">examples</a>
+Take the following steps to activate this service:
+- Sign up by using the form above, fill in your website domain name and email address
+- Embed the generated link into your websites HTML source code (<a href="/examples">examples</a>)
+- Profit! Get notified once a clone is detected
