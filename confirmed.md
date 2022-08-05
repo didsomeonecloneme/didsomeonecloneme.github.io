@@ -5,7 +5,7 @@ title: Email address confirmed successfully
 permalink: /confirmed/
 ---
 
-The final step is to insert one of the following code snippets into your website:
+The final step is to insert the following code snippet into your website:
 {% include examples.md %}
 
 ## Share it!
