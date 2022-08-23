@@ -4,8 +4,11 @@ left:
   - title: Home
     url: /
 
-  - title: Examples
-    url: /examples/
+  - title: Why & how
+    url: /why-and-how
+
+  - title: Installation
+    url: /installation/
 
 #  - title: Blog
 #    url: /blog/
