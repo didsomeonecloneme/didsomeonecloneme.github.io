@@ -1,16 +1,16 @@
 # Boxes include navigation
 
-- title: Getting Started
-  desc: Get started fast with installation and theme setup instructions
-  icon: cog
-  doc: installation
+- title: Users signed up
+  desc: 0
+  icon: user
+  name: users
 
-- title: Theme Features
-  desc: Lean about all the theme options, features and how to use them
-  icon: settings
-  doc: hero
+- title: Clones detected
+  desc: 0
+  icon: mail
+  name: clones
 
-- title: Customization
-  desc: Get help or tailor the theme to your specific requirements
-  icon: code
-  doc: customize
+- title: Requests per month
+  desc: 0
+  icon: cloud-download
+  name: requests
