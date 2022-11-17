@@ -29,6 +29,6 @@ The Application Insights logs are automatically purged after 90 days.
 
 DSCM is heavily cloud based. We are using the following cloud services:
 * Microsoft Azure for registration & callback services including data storage
-* Cloudflare DNS services
+* Cloudflare DNS & Caching services
 * Github to host our website frontend
 * SendGrid for sending the e-mail notifications
