@@ -1,16 +1,7 @@
 # Footer navigation links
 
-- title: Home
-  url: /
-
-#- title: Blog
-#  url: /blog/
-
-- title: Installation
-  url: /installation
+- title: Changelog
+  url: /changelog/
 
 - title: Privacy
-  url: /privacy
-
-- title: Contact
-  url: /contact/
+  url: /privacy/

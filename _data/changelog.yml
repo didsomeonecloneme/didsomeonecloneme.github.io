@@ -1,7 +1,22 @@
 # Changelog page source
 
-- title: Version 2022.06
-  label: BETA
-  date: June, 2022
+- title: Version 2022.11
+  label: RELEASE
+  date: November, 2022
+  list:
+  - Added Cloudflare caching support
+  - Added stats on the website frontpage
+  - Added changelog on the website
+
+- title: Version 2022.08
+  label: RELEASE
+  date: August, 2022
+  list:
+  - Send mail to users whenever a successful install is detected
+  - Send a reminder mail to users after 90 days
+
+- title: Version 2022.07
+  label: RELEASE
+  date: July, 2022
   list:
   - Initial release :)
