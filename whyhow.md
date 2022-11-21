@@ -5,7 +5,7 @@ permalink: /why-and-how/
 title: Why?
 ---
 
-DSCM is a tool that helps you to detect clones of your website. Cloned websites are commonly used in phishing attack to steal credentials or drop malware. If a clone is detected DSCM notifies you through an email.
+DSCM is a tool that helps you to detect clones of your website. Cloned websites are commonly used in phishing attacks to steal credentials or drop malware. If a clone is detected DSCM notifies you through an email.
 When notified you can take necessary steps, such as initiating a takedown, informing users / customers and performing investigation.
 
 # How?
