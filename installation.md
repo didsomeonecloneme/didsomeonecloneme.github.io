@@ -25,6 +25,6 @@ xmlHttp.send( null );
 </script>
 ```
 
-#### WordPress
+#### Or use our plugins
 
-There is a plugin available <a href="https://wordpress.org/plugins/did-someone-clone-me/">here</a>.
+<a href="https://wordpress.org/plugins/did-someone-clone-me/" style="border-bottom:0px;"><img src="/assets/img/wp.png" style="max-width: 200px; height: auto;"></a>.
