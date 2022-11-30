@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Changelog timeline
+title: Changelog
 width: small
 permalink: /changelog/
 ---
