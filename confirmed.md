@@ -9,7 +9,7 @@ The final step is to add the personal link to your website. Use one of install m
 
 #### Use one of our easy installs
 <span title="Wordpress"><a href="https://wordpress.org/plugins/did-someone-clone-me/" style="border-bottom:0px;"><img src="/assets/img/wp.png" style="max-width: auto; height: 75px;"></a></span>
-<span title="Google tag manager"><a href="https://dummy/" style="border-bottom:0px;"><img src="/assets/img/gtm.png" style="max-width: auto; height: 50px;"></a></span>
+<span title="Google tag manager" hidden><a href="https://dummy/" style="border-bottom:0px;"><img src="/assets/img/gtm.png" style="max-width: auto; height: 50px;"></a></span>
 
 #### Or HTML
 ```
