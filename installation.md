@@ -9,8 +9,7 @@ DSCM requires you to add the personal link to your websites source code. Impleme
 Use your own personal link when installing the examples (if you lost the link, its always included in the emails we send).
 
 #### Easy installs
-<span title="Wordpress"><a href="https://wordpress.org/plugins/did-someone-clone-me/" style="border-bottom:0px;"><img src="/assets/img/wp.png" style="max-width: auto; height: 75px;"></a></span>
-<span title="Google tag manager" hidden><a href="https://dummy/" style="border-bottom:0px;"><img src="/assets/img/gtm.png" style="max-width: auto; height: 50px;"></a></span>
+{% include easy_installs.html %}
 
 #### IMG
 
