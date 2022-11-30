@@ -11,7 +11,7 @@ Use your own personal link when installing the examples (if you lost the link, i
 #### Easy installs
 {% include easy_installs.html %}
 
-#### IMG
+#### HTML
 
 ```
 <img src="<YOUR_PERSONAL_LINK_HERE>" style="display: none;"></img>
