@@ -1,5 +1,11 @@
 # Changelog page source
 
+- title: Version 2023.01
+  label: RELEASE
+  date: January, 2023
+  list:
+   - Added quarterly summary report mail
+
 - title: Version 2022.12
   label: RELEASE
   date: December, 2022
