@@ -1,5 +1,11 @@
 # Changelog page source
 
+- title: Version 2023.04
+  label: RELEASE
+  date: April, 2023
+  list:
+   - Add Drupal extension
+
 - title: Version 2023.03
   label: RELEASE
   date: March, 2023
