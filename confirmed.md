@@ -5,7 +5,8 @@ title: Email address confirmed successfully
 permalink: /confirmed/
 ---
 
-The final step is to add the personal link to your website. Use one of install methods below.
+The final step is to add the personal link to your website. 
+Use one of the install methods below. Your personal link is <b>https://dscm.li/-382975673</b>
 
 #### Use one of our easy installs
 {% include easy_installs.html %}
