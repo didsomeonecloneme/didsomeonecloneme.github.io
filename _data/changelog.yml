@@ -1,5 +1,11 @@
 # Changelog page source
 
+- title: Version 2023.05
+  label: RELEASE
+  date: May, 2023
+  list:
+   - Added DSCM to the <a href="https://atticsecurity.com">Attic</a> app
+
 - title: Version 2023.04
   label: RELEASE
   date: April, 2023
