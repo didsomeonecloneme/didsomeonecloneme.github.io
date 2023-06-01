@@ -1,5 +1,11 @@
 # Changelog page source
 
+- title: Version 2023.06
+  label: RELEASE
+  date: June, 2023
+  list:
+   - Added backend improvements to reduce false positives
+
 - title: Version 2023.05
   label: RELEASE
   date: May, 2023
