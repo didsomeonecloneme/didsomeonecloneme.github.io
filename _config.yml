@@ -98,8 +98,6 @@ collections:
     output:         false
   changelogs:
     output:         false
-  other_install_options:
-    output:         false
 
 # Defaults
 defaults:
