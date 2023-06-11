@@ -7,6 +7,7 @@ hero:
     subtitle: Request a link below and start detecting clones of your website
     search: true
     image: dscm.png
+image: /uploads/dscm.png
 ---
 {% include boxes.html columns="3" title="" subtitle="" %}
 
