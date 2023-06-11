@@ -3,6 +3,7 @@ layout: page
 width: xsmall
 permalink: /installation/
 title: Installation
+image: /uploads/dscm.png
 ---
 
 DSCM requires you to add the personal link to your websites source code. Implement one of the solutions below to activate the notification. 

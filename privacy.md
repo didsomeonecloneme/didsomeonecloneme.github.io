@@ -3,6 +3,7 @@ layout: page
 width: xsmall
 permalink: /privacy/
 title: Privacy
+image: /uploads/dscm.png
 ---
 
 DSCM stores information that is required to deliver the service. We are only using this information to deliver our services and will never use it for other purposes nor share it with third parties. This page lists all information that we store.
