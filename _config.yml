@@ -43,7 +43,7 @@ social:
     instagram:
     linkedin:
     pinterest:
-    twitter:        https://twitter.com/wesleyneelen
+    twitter:        https://twitter.com/dscm_security
     vimeo:
     youtube:
 
@@ -98,6 +98,8 @@ collections:
     output:         false
   changelogs:
     output:         false
+  other_install_options:
+    output:         false
 
 # Defaults
 defaults:
@@ -113,3 +115,7 @@ defaults:
       type:         docs
     values:
       layout:       doc
+
+twitter:
+  username: dscm_security
+  card: summary
