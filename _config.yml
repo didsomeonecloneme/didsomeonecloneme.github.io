@@ -117,3 +117,6 @@ defaults:
 twitter:
   username: dscm_security
   card: summary
+
+plugins:
+  - jekyll-sitemap
