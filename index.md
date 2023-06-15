@@ -8,7 +8,7 @@ hero:
     search: true
     image: dscm.png
 image: /uploads/dscm.png
-description: We offer a free service that enables you to detect malicious clones of your website to effectively protect your website and it's visitors against phishing attacks
+description: We offer a free service that enables you to detect malicious clones of your website. This allows you to effectively protect your website and it's visitors against phishing attacks.
 ---
 {% include boxes.html columns="3" title="" subtitle="" %}
 
