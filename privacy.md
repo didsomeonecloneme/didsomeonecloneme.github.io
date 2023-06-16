@@ -3,7 +3,7 @@ layout: page
 width: xsmall
 permalink: /privacy/
 title: Privacy \| Website clone monitor
-image: /uploads/dscm.png
+image: /uploads/dscm_sm.png
 description: The DSCM privacy page. This page describes what data we collect, where it's located and for what purposes.
 ---
 

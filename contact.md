@@ -3,7 +3,7 @@ layout: page
 width: xsmall
 title: Contact \| Someone cloned my website
 permalink: /contact/
-image: /uploads/dscm.png
+image: /uploads/dscm_sm.png
 description: If you have any questions or concerns regarding our clone detection services, please don't hesitate to get in touch with us.
 ---
 

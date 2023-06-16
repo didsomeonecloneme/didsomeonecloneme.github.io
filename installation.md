@@ -3,7 +3,7 @@ layout: page
 width: xsmall
 permalink: /installation/
 title: Installation \| Find malicious website clones
-image: /uploads/dscm.png
+image: /uploads/dscm_sm.png
 description: Here, you can find all the information about the installation of DSCM using your personal link. Install DSCM to detect malicious clones of your website that are used in phishing attacks.
 ---
 
