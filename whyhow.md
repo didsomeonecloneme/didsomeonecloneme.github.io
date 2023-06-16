@@ -2,9 +2,12 @@
 layout: page
 width: xsmall
 permalink: /why-and-how/
-title: Why?
+title: Why and how \| Discover malicious website clones
 image: /uploads/dscm.png
+description: DSCM is a free to use tool that helps you to detect malicious clones of your website. You need to fill in your website's domain name and email address to start detecting clones of your website.
 ---
+
+# Why?
 
 DSCM is a tool that helps you to detect clones of your website. Cloned websites are commonly used in phishing attacks to steal credentials or drop malware. If a clone is detected DSCM notifies you through an email.
 When notified you can take necessary steps, such as initiating a takedown, informing users / customers and performing investigation.

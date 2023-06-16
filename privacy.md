@@ -2,8 +2,9 @@
 layout: page
 width: xsmall
 permalink: /privacy/
-title: Privacy
+title: Privacy \| Website clone monitor
 image: /uploads/dscm.png
+description: The DSCM privacy page. This page describes what data we collect, where it's located and for what purposes.
 ---
 
 DSCM stores information that is required to deliver the service. We are only using this information to deliver our services and will never use it for other purposes nor share it with third parties. This page lists all information that we store.
