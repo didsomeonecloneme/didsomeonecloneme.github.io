@@ -10,7 +10,7 @@ description: DSCM is a free to use tool that helps you to detect malicious clone
 # Why?
 
 DSCM is a tool that helps you to find malicious copies of your website. Copied websites are commonly used in phishing attacks to scam visitors, steal credentials or drop malware. If a copy is detected DSCM notifies you through an email.
-When notified you can take necessary steps, such as initiating a takedown, informing users / customers and performing investigation.
+When notified you can take necessary steps, such as initiating a takedown on the phishing website, informing users / customers and performing investigation.
 
 # How?
 
