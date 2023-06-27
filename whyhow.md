@@ -1,23 +1,28 @@
 ---
 layout: page
 width: xsmall
-permalink: /why-and-how/
+permalink: /find-website-copies-why-and-how/
 title: Why and how \| Find malicious website copies
 image: /uploads/dscm_sm.png
 description: DSCM is a free to use tool that helps you to detect malicious clones of your website. You need to fill in your website's domain name and email address to start detecting clones of your website.
 ---
 
-# Why?
+# Why do I have to find malicious copies of my website?
 
-DSCM is a tool that helps you to find malicious copies of your website. Copied websites are commonly used in phishing attacks to scam visitors, steal credentials or drop malware. If a copy is detected DSCM notifies you through an email.
-When notified you can take necessary steps, such as initiating a takedown on the phishing website, informing users / customers and performing investigation.
+DSCM (Did someone clone me) is a tool designed to safeguard your website from malicious copies. Copied websites are frequently employed in phishing attacks, aiming to deceive visitors, scam visitors, compromise sensitive information, and distribute harmful malware. By leveraging DSCM, you can proactively identify these fraudulent duplicates and take swift action to protect your online presence.
 
-# How?
+Detecting fraudulent copies is made effortless with DSCM's technology. As soon as a duplicate is detected, DSCM promptly notifies you via email, allowing you to respond effectively. With timely notifications, you gain the upper hand in combating phishing websites and safeguarding your website visitors and customers.
 
-Take the following steps to activate this service:
+Upon receiving an alert from DSCM after spotting a new clone, you can immediately initiate crucial steps to mitigate the threat. This includes promptly taking down the fraudulent website, informing your users and customers about the potential risks, and launching a thorough investigation into the incident. By taking these necessary measures, you can swiftly neutralize the impact of phishing attacks and safeguard your online brand reputation.
+
+# How to detect malicious clones of my website using DSCM?
+
+Activate the DSCM service using the following steps:
 - Sign up by using the form on the homepage, fill in your website domain name and email address
 - Embed the generated link into your websites HTML source code (<a href="/installation">installation</a>)
 - Profit! Get notified once a copy is detected
+
+By following these steps, you'll unlock the full potential of our service and enjoy comprehensive protection for your website. After installation you'll be promptly alerted whenever a copy of your website is detected.
 
 # Video
 
