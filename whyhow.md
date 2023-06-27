@@ -26,5 +26,5 @@ By following these steps, you'll unlock the full potential of our service and en
 
 # Video
 
-This video explains the concept:
+We have created a video that explains the concept of our website clone detection service. You can watch it to gain understanding of how our service works and the benefits it offers:
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/Vn6cuEaXwYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
