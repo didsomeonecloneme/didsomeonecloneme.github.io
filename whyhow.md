@@ -18,7 +18,7 @@ Upon receiving an alert from DSCM after spotting a new clone, you can immediatel
 # How to detect malicious clones of my website using DSCM?
 
 Activate the DSCM service using the following steps:
-- Sign up by using the form on the homepage, fill in your website domain name and email address
+- Sign up by using the form on the <a href="/">homepage</a>, fill in your website domain name and email address
 - Embed the generated link into your websites HTML source code (<a href="/installation">installation</a>)
 - Profit! Get notified once a copy is detected
 
