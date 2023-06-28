@@ -18,9 +18,11 @@ Dear [Hosting Provider's Name],
 I hope this email finds you well. I am writing to bring to your attention a issue that requires immediate action. I have recently come across a phishing website that is being hosted on your server. The details of the suspicious website are as follows:
 
 Phishing Website URL: [Insert the URL of the phishing website]
+
 IP Address: [Insert the IP address of the server hosting the website]
 
 Description of the Phishing Website:
+
 [Provide a brief description of the phishing website, including its purpose, any specific content or design elements used to deceive users, and any other relevant information.]
 
 It is essential that you take prompt action to investigate and remove this phishing website from your server. 
@@ -40,4 +42,5 @@ Thank you for your prompt action and cooperation.
 Sincerely,
 
 [Your Name]
+
 [Your Contact Information]
