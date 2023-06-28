@@ -35,7 +35,7 @@ Once you have gathered the necessary evidence, it's time to report the phishing 
 
 Visit the Hosting Provider's Website: Go to the hosting provider's website and look for their contact information or a dedicated page for reporting abuse or phishing websites.
 
-Compose a Detailed Report: Write a concise and clear report that includes the evidence you gathered. Provide the URL of the phishing website, describe its fraudulent nature, and attach the screenshots or any supporting documentation.
+Compose a Detailed Report: Write a concise and clear report that includes the evidence you gathered. Provide the URL of the phishing website, describe its fraudulent nature, and attach the screenshots or any supporting documentation. We published a <a href="/website-clone-reporting-template/">report template</a> on our website.
 
 Attach Supporting Files: If the hosting provider allows file attachments, include the screenshots or additional evidence to strengthen your case. Ensure the files are in common image formats, such as JPEG or PNG.
 
