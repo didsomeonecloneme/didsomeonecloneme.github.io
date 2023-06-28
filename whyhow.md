@@ -9,7 +9,7 @@ description: DSCM is a free to use tool that helps you to detect malicious clone
 
 # Why do I have to find malicious copies of my website?
 
-DSCM (Did someone clone me) is a tool designed to safeguard your website from malicious copies. Copied websites are frequently employed in phishing attacks, aiming to deceive visitors, scam visitors, compromise sensitive information, and distribute harmful malware. By leveraging DSCM, you can proactively identify these fraudulent duplicates and take swift action to protect your online presence.
+DSCM (Did someone clone me) is a tool designed to safeguard your website from malicious copies. Copied websites are frequently employed in <a href="/what-is-website-cloning/">phishing attacks</a>, aiming to deceive visitors, scam visitors, compromise sensitive information, and distribute harmful malware. By leveraging DSCM, you can proactively identify these fraudulent duplicates and take swift action to protect your online presence.
 
 Detecting fraudulent copies is made effortless with DSCM's technology. As soon as a duplicate is detected, DSCM promptly notifies you via email, allowing you to respond effectively. With timely notifications, you gain the upper hand in combating phishing websites and safeguarding your website visitors and customers.
 
