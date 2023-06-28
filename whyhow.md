@@ -13,7 +13,7 @@ DSCM (Did someone clone me) is a tool designed to safeguard your website from ma
 
 Detecting fraudulent copies is made effortless with DSCM's technology. As soon as a duplicate is detected, DSCM promptly notifies you via email, allowing you to respond effectively. With timely notifications, you gain the upper hand in combating phishing websites and safeguarding your website visitors and customers.
 
-Upon receiving an alert from DSCM after spotting a new clone, you can immediately initiate crucial steps to mitigate the threat. This includes promptly taking down the fraudulent website, informing your users and customers about the potential risks, and launching a thorough investigation into the incident. By taking these necessary measures, you can swiftly neutralize the impact of phishing attacks and safeguard your online brand reputation.
+Upon receiving an alert from DSCM after spotting a new clone, you can immediately initiate crucial steps to mitigate the threat. This includes promptly taking down the fraudulent website by <a href="/report-a-website-clone/">reporting it to the hosting provider</a>, informing your users and customers about the potential risks, and launching a thorough investigation into the incident. By taking these necessary measures, you can swiftly neutralize the impact of phishing attacks and safeguard your online brand reputation.
 
 # How to detect malicious clones of my website using DSCM?
 
