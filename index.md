@@ -1,7 +1,7 @@
 ---
 layout: page
 width: expand
-title: Home \| Detect malicious website clones
+title: DSCM \| Detect malicious website clones
 hero:
     title: Did someone clone me?
     subtitle: Request a link below and start detecting clones of your website
