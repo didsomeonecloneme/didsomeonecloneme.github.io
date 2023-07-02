@@ -3,4 +3,7 @@ layout: none
 ---
 
 User-agent: *
+Disallow: /unsubscribed/
+Disallow: /failed/
+Disallow: /confirmationfailed/
 Sitemap: {{ site.url }}/sitemap.xml
