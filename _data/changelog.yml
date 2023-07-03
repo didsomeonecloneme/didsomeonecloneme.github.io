@@ -1,5 +1,11 @@
 # Changelog page source
 
+- title: Version 2023.07
+  label: RELEASE
+  date: July, 2023
+  list:
+   - Google Tag Manager template was added to the public GTM gallery.
+
 - title: Version 2023.06
   label: RELEASE
   date: June, 2023
