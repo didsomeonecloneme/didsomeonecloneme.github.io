@@ -9,7 +9,7 @@ description: If you have any questions or concerns regarding our clone detection
 
 ## Who is behind did someone clone me (DSCM)
 DSCM is developed by <a href="https://www.linkedin.com/in/wesleyneelen/">Wesley Neelen</a>, co-founder of the cybersecurity startup <a href="https://zolder.io/">Zolder</a> and mobile app <a href="https://atticsecurity.com/">Attic</a>. 
-I have been working for more then 10 years as an ethical hacker / penetration tester. In this role the main task was to find vulnerabilities within IT-environments of customers and advising them on how to mitigate the vulnerabilities.
+I have been working for more then 10 years as an ethical hacker / penetration tester. In this role the main task is to find vulnerabilities within IT-environments of customers and advising them on how to mitigate the vulnerabilities.
 
 Next to penetration tests, I also perform security research. One of the subjects was investigating phishing sites that pop-up every day. During this work I saw the lack of protection mechanisms against <a href="/what-is-website-cloning/">website cloning</a>. While some techniques are available.
 
