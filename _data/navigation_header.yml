@@ -21,7 +21,7 @@ right:
 #    url: /changelog-timeline/
 #    button: primary-outline
 
-  - title: Contact
+  - title: About
     url: /contact/
     button: success
 
