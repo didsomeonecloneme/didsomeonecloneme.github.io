@@ -56,7 +56,7 @@ function generateLink(website, email) {
          const obj = JSON.parse(xhr.responseText);
          var element = document.getElementById("hero");
 	 if (xhr.status == 200) {
-           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Link created</h3><p>Your personal link is: <b><a href="#" id="link"></a></b></p><p>We\'ve sent you an email to confirm your email address. This email also contains the instructions to install your personal link.</div>';
+           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Link created</h3><p>We\'ve sent you an email to confirm your email address. This email also contains the instructions to install your personal link.</div>';
            document.getElementById('link').textContent=obj.link;
          } else {
            element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Error occured</h3><p id="error"></p><p><a href="/">Try again</a></p></div>';
