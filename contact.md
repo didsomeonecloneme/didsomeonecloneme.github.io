@@ -23,3 +23,6 @@ This is why DSCM was created. Our mission is to simplify website clone protectio
 <span data-uk-icon="icon: linkedin;" class=""></span> <a href="https://www.linkedin.com/in/wesleyneelen/">https://www.linkedin.com/in/wesleyneelen/</a>
 
 <span data-uk-icon="icon: world;" class=""></span> <a href="https://forsec.nl">My personal blog</a>
+
+## Feedback
+Want to share feedback with us? Please use our <a href="https://zolderbv.typeform.com/dscm-feedback">feedback form</a>.
