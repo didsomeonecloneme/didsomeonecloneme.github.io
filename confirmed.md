@@ -19,7 +19,7 @@ Use one of the install methods below. Your personal link is <b>https://dscm.li/-
 #### Easy installs
 {% include easy_installs.html %}
 
-#### Or HTML
+#### Or HTML <a href="/manual-installation" style="border-bottom:0px; float:right; vertical-align: top; font-weight:normal;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Guide</button></a>
 ```
 <img src="https://dscm.li/-382975673" style="display: none;"></img>
 ```

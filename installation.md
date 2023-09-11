@@ -15,13 +15,12 @@ Use your own personal link when installing the examples (if you lost the link, i
 #### Easy installs
 {% include easy_installs.html %}
 
-#### HTML
+#### Manual installs <a href="/manual-installation" style="border-bottom:0px; float:right; vertical-align: top; font-weight:normal;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Guide</button></a>
 
 ```
 <img src="<YOUR_PERSONAL_LINK_HERE>" style="display: none;"></img>
 ```
 
-#### JavaScript
 ```
 <script>
 var xmlHttp = new XMLHttpRequest();
