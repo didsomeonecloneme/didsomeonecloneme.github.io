@@ -4,6 +4,22 @@
     <description>Did someone clone me for Joomla!</description>
     <element>didsomeonecloneme</element>
     <type>module</type>
+    <version>1.0.1</version>
+    <downloads>
+      <downloadurl type="full" format="zip">https://raw.githubusercontent.com/didsomeonecloneme/didsomeonecloneme.github.io/master/uploads/didsomeonecloneme_v1.0.1.zip</downloadurl>
+    </downloads>
+    <tags>
+      <tag>stable</tag>
+    </tags>
+    <maintainer>Did someone clone me</maintainer>
+    <maintainerurl>https://didsomeoneclone.me</maintainerurl>
+    <targetplatform name="joomla" version="[345].*"/>
+  </update>
+  <update>
+    <name>Did someone clone me</name>
+    <description>Did someone clone me for Joomla!</description>
+    <element>didsomeonecloneme</element>
+    <type>module</type>
     <version>1.0.0</version>
     <downloads>
       <downloadurl type="full" format="zip">https://raw.githubusercontent.com/didsomeonecloneme/didsomeonecloneme.github.io/master/uploads/didsomeonecloneme_v1.0.0.zip</downloadurl>
