@@ -7,7 +7,7 @@ image: /uploads/dscm_sm.png
 description: If you have any questions or concerns regarding our clone detection services, please don't hesitate to get in touch with us.
 ---
 
-## Who is behind did someone clone me (DSCM)
+## About us
 DSCM is developed by <a href="https://www.linkedin.com/in/wesleyneelen/">Wesley Neelen</a>, co-founder of the cybersecurity startup <a href="https://zolder.io/">Zolder</a> and mobile app <a href="https://atticsecurity.com/">Attic</a>. 
 I have been working for more then 10 years as an ethical hacker / penetration tester. In this role the main task is to find vulnerabilities within IT-environments of customers and advising them on how to mitigate the vulnerabilities.
 
@@ -23,6 +23,9 @@ This is why DSCM was created. Our mission is to simplify website clone protectio
 <span data-uk-icon="icon: linkedin;" class=""></span> <a href="https://www.linkedin.com/in/wesleyneelen/">https://www.linkedin.com/in/wesleyneelen/</a>
 
 <span data-uk-icon="icon: world;" class=""></span> <a href="https://forsec.nl">My personal blog</a>
+
+<span data-uk-icon="icon: lock;" class=""></span> <a href="/responsible-disclosure/">Responsible disclosure</a>
+
 
 ## Feedback
 Want to share feedback with us? Please use our <a href="https://zolderbv.typeform.com/dscm-feedback">feedback form</a>.

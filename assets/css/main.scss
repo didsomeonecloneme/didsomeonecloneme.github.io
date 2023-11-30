@@ -26,3 +26,27 @@ html, body {
     overflow-x: hidden;
     width: 100%;
 }
+
+.uk-button-premium {
+    background-color: gold;
+    border: 1px solid transparent; /* Gold border color */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Adjust the font size as needed */
+    cursor: pointer;
+  }
+  
+.uk-button-premium:hover {
+  background-color: #ffd700; /* Hover color when the mouse is over the button */
+}
+
+.hero-image {
+  margin-top: -28px;
+  margin-bottom: 30px
+}
+
+.hero-image img {
+  max-height: 120px
+}

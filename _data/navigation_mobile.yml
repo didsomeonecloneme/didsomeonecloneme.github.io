@@ -3,18 +3,22 @@
 - title: Home
   url: /
 
+- title: Pricing
+  url: /pricing
+
 - title: Why & how
   url: /find-website-copies-why-and-how
 
 - title: Installation
   url: /installation/
 
-#- title: Blog
-#  url: /blog/
-
-#- title: Changelog
-#  url: /changelog-timeline/
-
 - title: About
   url: /contact/
+
+- title: Get Premium
+  url: /?plan=premium
+  button: premium
+
+- title: Premium Dashboard
+  url: /login/
   button: success

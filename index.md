@@ -1,7 +1,7 @@
 ---
 layout: page
 width: expand
-title: DSCM \| Detect Website clones
+title: Detect Website Clones
 hero:
     title: Did someone clone me?
     subtitle: Request a link below and start detecting clones of your website

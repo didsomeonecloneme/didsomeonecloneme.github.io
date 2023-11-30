@@ -1,5 +1,19 @@
 # Changelog page source
 
+- title: Version 2023.12
+  label: MAJOR RELEASE
+  date: December, 2023
+  list:
+   - Introducing DSCM Premium
+   - Update logo
+   - And many other things..
+
+- title: Version 2023.09
+  label: RELEASE
+  date: September, 2023
+  list:
+   - Release guides
+
 - title: Version 2023.07
   label: RELEASE
   date: July, 2023

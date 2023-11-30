@@ -43,4 +43,37 @@
 			<a href="/google-tag-manager-installation" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Guide</button></a>
 		</td>
 	</tr>
+	<tr>
+		<td>
+			<a href="/shopify-installation/" style="border-bottom:0px;" target="_blank"><span title="Shopify"><img src="/assets/img/shopify.png"></span></a>
+		</td>
+		<td style="vertical-align: middle;">
+			<a href="/shopify-installation/" style="border-bottom:0px;" target="_blank">Shopify</a>
+		</td>
+		<td style="vertical-align: middle;" align="right">
+			<a href="/shopify-installation/" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Guide</button></a>
+		</td>
+	</tr>
 </table>
+
+#### Manual installs <a href="/manual-installation" style="border-bottom:0px; float:right; vertical-align: top; font-weight:normal;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Guide</button></a>
+```
+<script src="<YOUR_PERSONAL_LINK_HERE>" crossorigin="anonymous"></script>
+```
+
+<p class="uk-text-lead uk-text-center" style="font-size: 0.75rem;">Additional manual install options are available <a href="/more-manual-installs">here</a></p>
+
+<script>
+var replaced = $("body").html().replace(/&lt;YOUR_PERSONAL_LINK_HERE&gt;/g,'<span id="link2"><mark>&lt;YOUR_PERSONAL_LINK_HERE&gt;</mark></span>');
+$("body").html(replaced);
+
+const urlRegex = /^(https?):\/\/[^\s/$.?#<>].[^\s<>]*$/i;
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+id = urlParams.get('id');
+
+if (urlRegex.test(id)) {
+  $("#link").text(id);
+  $("#link2").text(id);
+}
+</script>

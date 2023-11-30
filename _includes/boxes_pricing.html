@@ -1,0 +1,58 @@
+{% if include.columns %}
+    {% assign columns = include.columns %}
+    {% if columns == '1' %}
+        {% assign container = ' uk-container-xsmall' %}
+    {% elsif columns == '2' %}
+        {% assign container = ' uk-container-small' %}
+    {% else %}
+        {% assign container = '' %}
+    {% endif %}
+{% else %}
+    {% assign columns = 3 %}
+    {% assign container = '' %}
+{% endif %}
+<div class="">
+    <div class="uk-container{{container}}">
+        {% if include.title %}
+            <h2 class="uk-h1 uk-text-center">{{ include.title }}</h2>
+        {% endif %}
+
+        {% if include.subtitle %}<p class="uk-text-lead uk-text-center">{{ include.subtitle | escape }}</p>{% endif %}
+
+        <div class="uk-child-width-1-{{ columns }}@m uk-grid-match uk-margin-medium-top" data-uk-grid>
+        {% for item in site.data.pricing_plans %}
+            {% if item.title %}
+            {% assign doc_url = item.doc | prepend:"/docs/" | append:"/" %}
+            {% assign doc = site.docs | where:"url", doc_url | first %}
+            <div>
+                <div class="uk-card-large uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    {% if item.icon %}
+                    <span data-uk-icon="icon: {{ item.icon }}; ratio: 3.4" class=""></span>
+                    {% endif %}
+                    <h3 class="uk-card-title uk-margin">{{ item.title }}</h3>
+                    {% if item.desc %}
+                      <span style="color: #05c896; font-size: 16px; font-weight: bold;" id="box_{{item.name}}">{{ item.desc }}</span>
+                    {% endif %}
+		    <br />
+		    <br />
+		    <ul class="uk-list">
+                    {% for item in item.list %}
+                    {% if item.link %}
+                      <li><a href="{{ item.link }}" style="color: #8f919e; border-bottom:0px" onmouseover="this.style.textDecoration = 'underline';" onmouseout="this.style.textDecoration = 'none';">{{ item.name }}</a></li>
+                    {% else %}
+                      <li>{{ item.name }}</li>
+                    {% endif %}
+                    {% endfor %}
+		    </ul>
+                    {% if item.price %}
+                      <span style="color: #05c896; font-size: 16px; font-weight: bold;" id="price_{{item.name}}">{{ item.price }}</span>
+                    {% endif %}
+		    <br /><br />
+		    <div id="submitButton"><a href="/?plan={{item.name}}" id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff">Get {{item.name}}</a></div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>

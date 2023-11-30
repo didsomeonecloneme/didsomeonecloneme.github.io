@@ -6,4 +6,5 @@ User-agent: *
 Disallow: /unsubscribed/
 Disallow: /failed/
 Disallow: /confirmationfailed/
+Disallow: /responsible-disclosure/
 Sitemap: {{ site.url }}/sitemap.xml

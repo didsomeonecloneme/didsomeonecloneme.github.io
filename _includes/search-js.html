@@ -3,9 +3,30 @@ var website;
 //var email;
 
 const params = new URLSearchParams(window.location.search)
-element = document.getElementById("b");
+
+document.addEventListener('DOMContentLoaded', function() {
+  const plan = params.get('plan');
+  const link = document.getElementById('signup');
+
+  if (plan === 'premium') {
+    link.textContent = 'Sign up to Premium';
+    link.classList.remove("uk-button-primary");
+    link.classList.add("uk-button-premium");
+  } else {
+    link.textContent = 'Sign up for free';
+    link.classList.remove("uk-button-premium");
+    link.classList.add("uk-button-primary");
+  }
+});
+
+element = document.getElementById("signup");
 element.addEventListener("click", formJS);
 document.addEventListener("keyup", formJS);
+
+if (params.get('subscribed') == 'true') {
+    var element = document.getElementById("hero");
+    element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Premium Sign up completed</h3><p style="font-size:.975rem;">We\'ve sent you an email with <b>installation instructions</b>.</div>';
+}
 
 function formJS(event) { 
     if (event.keyCode === 13) {	
@@ -17,12 +38,12 @@ function formJS(event) {
 
 function theJS() {
     if (typeof website == 'undefined') {
-           website = document.getElementById('search-hero').value;
-           document.getElementById('submitButton').innerHTML='<p><a id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem;">Create link</a></p><p class="uk-text-lead uk-text-center" style="font-size: 0.75rem;">By using this service you agree that DSCM stores your email address to provide the service. DSCM will not use the email address for other purposes nor provide it to third parties.</p>';
-           element = document.getElementById("b");
-	   element.addEventListener("click", formJS);
+            website = document.getElementById('search-hero').value;
+            document.getElementById('submitButton').innerHTML='<p><a id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem;">Create link</a></p><p class="uk-text-lead uk-text-center" style="font-size: 0.75rem;">By using this service you agree that DSCM stores your email address to provide the service. DSCM will not use the email address for other purposes nor provide it to third parties.</p>';
+            element = document.getElementById("b");
+      element.addEventListener("click", formJS);
         } else {
-           var email = document.getElementById('search-hero').value;
+            var email = document.getElementById('search-hero').value;
         }
 
         document.getElementById('search-hero').placeholder='Your email address';
@@ -32,45 +53,66 @@ function theJS() {
         element.classList.add("uk-animation-scale-up");
         element.classList.add("uk-animation-slide-right-medium");
 
-        if (typeof website !== 'undefined' && typeof email !== 'undefined') {
-           var element = document.getElementById("hero");
-           element.classList.add("uk-animation-slide-right");
-           element.classList.add("uk-animation-reverse");
+  if (params.has('plan') == true) {
+      var plan = params.get('plan');
+        } else {
+            var plan = 'free';
+        }
 
-           setTimeout(function(){
-           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3>Creating your link...</h3><p>Please wait a moment</p></div>';
-           element.classList.remove("uk-animation-reverse");
-           element.classList.remove("uk-animation-slide-right");
-           element.classList.add("uk-animation-scale-up");
-           element.classList.add("uk-animation-slide-right-medium");
-           if (website && email) {
-               generateLink(website, email);
-           }
-           }, 800);
+        if (typeof website !== 'undefined' && typeof email !== 'undefined' && typeof plan !== 'undefined') {
+            var element = document.getElementById("hero");
+            element.classList.add("uk-animation-slide-right");
+            element.classList.add("uk-animation-reverse");
+
+            if (params.get('test') == 'true') {
+              var payment_url = "https://buy.stripe.com/test_eVaaIhc3N8OI4iA3cc?prefilled_email=" + email;
+            } else {
+              var payment_url = "https://buy.stripe.com/7sIg1K8bj21X3ja8wz?prefilled_email=" + email;
+            }
+
+            if (params.get('plan') == 'premium') {
+              generateLink(website, email, plan);
+              return;
+            }
+
+            setTimeout(function(){
+            element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3>Creating your link...</h3><p>Please wait a moment</p></div>';
+            element.classList.remove("uk-animation-reverse");
+            element.classList.remove("uk-animation-slide-right");
+            element.classList.add("uk-animation-scale-up");
+            element.classList.add("uk-animation-slide-right-medium");
+            if (website && email && plan) {
+                generateLink(website, email, plan);
+            }
+            }, 800);
     }
 
-function generateLink(website, email) {
+function generateLink(website, email, plan) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
-         const obj = JSON.parse(xhr.responseText);
-         var element = document.getElementById("hero");
-	 if (xhr.status == 200) {
-           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Link created</h3><p style="font-size:.975rem;">We\'ve sent you an email to <b>confirm your email address</b>. This email also contains the instructions to <b>install your personal link</b>.</div>';
-           document.getElementById('link').textContent=obj.link;
-         } else {
-           element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Error occured</h3><p id="error"></p><p><a href="/">Try again</a></p></div>';
-           document.getElementById('error').innerText = obj.message;
-	}
-       var element = document.getElementById("hero");
-       element.classList.remove("uk-animation-scale-up");
-       element.classList.remove("uk-animation-slide-right-medium");
-       element.classList.add("uk-animation-slide-left");
+          const obj = JSON.parse(xhr.responseText);
+
+    if (params.get('plan') == 'premium') {
+      location.href = payment_url + "&client_reference_id=" + obj.payment_id;
+    }
+  
+          var element = document.getElementById("hero");
+    if (xhr.status == 200) {
+            element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Sign up completed</h3><p style="font-size:.975rem;">We\'ve sent you an email with <b>installation instructions.</div>';
+          } else {
+            element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Error occured</h3><p id="error"></p><p><a href="/">Try again</a></p></div>';
+            document.getElementById('error').innerText = obj.message;
+  }
+        var element = document.getElementById("hero");
+        element.classList.remove("uk-animation-scale-up");
+        element.classList.remove("uk-animation-slide-right-medium");
+        element.classList.add("uk-animation-slide-left");
       }
     }
-    
+
     if (params.get('test') == 'true') {
-	var url = "https://api-test.didsomeoneclone.me/generatelink";
+  var url = "https://api-test.didsomeoneclone.me/generatelink";
     } else {
         var url = "https://api.didsomeoneclone.me/generatelink";
     }
@@ -78,8 +120,9 @@ function generateLink(website, email) {
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
-    var data = JSON.stringify({"mail": email, "site": website});
+    var data = JSON.stringify({"mail": email, "site": website, "plan": plan});
     xhr.send(data);
     }
 }
 </script>
+  

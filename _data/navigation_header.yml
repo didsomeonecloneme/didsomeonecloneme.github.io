@@ -4,63 +4,23 @@ left:
   - title: Home
     url: /
 
+  - title: Pricing
+    url: /pricing
+
   - title: Why & how
     url: /find-website-copies-why-and-how
 
   - title: Installation
     url: /installation/
 
-#  - title: Blog
-#    url: /blog/
-
-# Navbar right menu navigation links
-
-right:
-
-#  - title: Changelog
-#    url: /changelog-timeline/
-#    button: primary-outline
-
   - title: About
     url: /contact/
+
+right:
+  - title: Get Premium
+    url: /?plan=premium
+    button: premium
+
+  - title: Premium Dashboard
+    url: /login/
     button: success
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: default
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: primary
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: secondary
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: danger
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: success
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: warning
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: primary-outline
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: danger-outline
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: success-outline
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: warning-outline

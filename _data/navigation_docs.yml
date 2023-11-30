@@ -1,1 +1,15 @@
+- title: General features
+  docs:
+  - notifications
+  - requests
+  - reports
 
+- title: Premium features
+  docs:
+  - clones
+  - reviews
+  - detections
+  - domainhiding
+  - evidencegathering
+  - mitigation
+  - dashboard

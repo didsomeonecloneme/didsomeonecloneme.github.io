@@ -1,0 +1,46 @@
+# Boxes include navigation
+
+- title: Free
+  desc: For basic protection. Sign up in 5 minutes to protect your website today
+  name: free
+  list:
+    - name: ✅ Get notifications
+      link: /docs/notifications
+    - name: ✅ Unlimited requests
+      link: /docs/requests
+    - name: ✅ Quarterly reports
+      link: /docs/reports
+    - name: ❌ Max 1 clone p/m
+    - name: ❌ No manual reviews
+    - name: ❌ Basic detection
+    - name: ❌ No domain hiding
+    - name: ❌ No evidence gathering
+    - name: ❌ No mitigations
+    - name: ❌ No Dashboard Access
+  price: €0 / month
+
+- title: Premium
+  desc: Best protection available. Mitigate clones with our premium plan
+  name: premium
+  list:
+    - name: ✅ Get notifications
+      link: /docs/notifications
+    - name: ✅ Unlimited requests
+      link: /docs/requests
+    - name: ✅ Quarterly reports
+      link: /docs/reports
+    - name: ✅ Unlimited clones
+      link: /docs/clones
+    - name: ✅ Manual reviews
+      link: /docs/reviews
+    - name: ✅ Advanced detection
+      link: /docs/detections
+    - name: ✅ Domain hiding
+      link: /docs/domainhiding
+    - name: ✅ Evidence gathering
+      link: /docs/evidencegathering
+    - name: ✅ Mitigate clones
+      link: /docs/mitigation
+    - name: ✅ Premium Dashboard
+      link: /docs/dashboard
+  price: €10 / month

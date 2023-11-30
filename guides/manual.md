@@ -29,18 +29,10 @@ To manually install DSCM on your website, you will need to incorporate a HTML or
 Begin by accessing your website's source code. You can usually do this through your website's content management system (CMS) or by directly editing the HTML files if you have access to them.
 
 ### 2. Insert code snippet
-Insert one of the following code snippets into the appropriate location (just before </body>) within your website's source code:
+Insert the following code snippet between the HTML <head> tags within your website's source code:
 
 ```
-<img src="<YOUR_PERSONAL_LINK_HERE>" style="display: none;"></img>
-```
-
-```
-<script>
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.open("GET", "<YOUR_PERSONAL_LINK_HERE>", false);
-xmlHttp.send(null);
-</script>
+<script src="<YOUR_PERSONAL_LINK_HERE>" crossorigin="anonymous"></script>
 ```
 
 Replace ```<YOUR_PERSONAL_LINK_HERE>``` with your personal link. This code will run in the background and remain hidden from visitors.
