@@ -41,9 +41,12 @@ function theJS() {
             website = document.getElementById('search-hero').value;
             document.getElementById('submitButton').innerHTML='<p><a id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem;">Create link</a></p><p class="uk-text-lead uk-text-center" style="font-size: 0.75rem;">By using this service you agree that DSCM stores your email address to provide the service. DSCM will not use the email address for other purposes nor provide it to third parties.</p>';
             element = document.getElementById("b");
-      element.addEventListener("click", formJS);
+            element.addEventListener("click", formJS);
         } else {
             var email = document.getElementById('search-hero').value;
+            gtag('set', 'user_data', {
+              "email": email
+            });
         }
 
         document.getElementById('search-hero').placeholder='Your email address';
