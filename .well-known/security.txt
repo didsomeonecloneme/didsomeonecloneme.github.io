@@ -1,0 +1,4 @@
+Contact: mailto:contact@didsomeoneclone.me
+Expires: 2030-12-30T23:00:00.000Z
+Preferred-Languages: en
+Policy: https://didsomeoneclone.me/responsible-disclosure/
