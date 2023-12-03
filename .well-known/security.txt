@@ -1,3 +1,7 @@
+---
+layout: none
+permalink: .well-known/security.txt
+---
 Contact: mailto:contact@didsomeoneclone.me
 Expires: 2030-12-30T23:00:00.000Z
 Preferred-Languages: en
