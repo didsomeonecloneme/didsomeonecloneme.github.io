@@ -1,6 +1,7 @@
 ---
 title: Cybercriminals cloning Shopify stores to scam visitors
 author: dscm
+image: /uploads/dscm_sm.png
 categories: [Shopify]
 ---
 
