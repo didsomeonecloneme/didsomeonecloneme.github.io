@@ -1,6 +1,7 @@
 ---
 title: The launch of DSCM Premium!
 author: dscm
+image: /uploads/dscm_sm.png
 categories: [DSCM, Premium]
 ---
 
