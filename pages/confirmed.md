@@ -4,12 +4,6 @@ width: xsmall
 title: Installation instructions
 permalink: /confirmed/
 ---
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-957992313/VTiGCJTGo9UYEPma58gD',
-      'transaction_id': ''
-  });
-</script>
 
 ## Install instructions
 
