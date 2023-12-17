@@ -1,6 +1,7 @@
 <script>
 var website;
 //var email;
+var isTooltipShown = false;
 
 const params = new URLSearchParams(window.location.search)
 
@@ -38,12 +39,49 @@ function formJS(event) {
 
 function theJS() {
     if (typeof website == 'undefined') {
-            website = document.getElementById('search-hero').value;
+            form = document.getElementById('search-hero');
+            var domainPattern = /^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/i;
+
+            if (!domainPattern.test(form.value)) {
+                if (!window.isTooltipShown) {
+                  form.setCustomValidity('Please enter a valid domain (e.g. example.com)');
+                  form.reportValidity();
+                  window.isTooltipShown = true;
+                  
+                  // Make the tooltip disappear
+                  setTimeout(function() {
+                      form.setCustomValidity('');
+                      window.isTooltipShown = false;
+                  }, 2000);
+                }
+                return;
+            } else {
+                website = form.value;
+            }
+
             document.getElementById('submitButton').innerHTML='<p><a id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem;">Create link</a></p><p class="uk-text-lead uk-text-center" style="font-size: 0.75rem;">By using this service you agree that DSCM stores your email address to provide the service. DSCM will not use the email address for other purposes nor provide it to third parties.</p>';
             element = document.getElementById("b");
             element.addEventListener("click", formJS);
         } else {
-            var email = document.getElementById('search-hero').value;
+          form = document.getElementById('search-hero');
+          var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+          if (!emailPattern.test(form.value)) {
+              if (!window.isTooltipShown) {
+                form.setCustomValidity('Please enter a valid email (e.g. john.doe@example.com)');
+                form.reportValidity();
+                window.isTooltipShown = true;
+                
+                // Make the tooltip disappear
+                setTimeout(function() {
+                    form.setCustomValidity('');
+                    window.isTooltipShown = false;
+                }, 2000);
+              }
+              return;
+            } else {
+                email = form.value;
+            }
         }
 
         document.getElementById('search-hero').placeholder='Your email address';
