@@ -12,4 +12,6 @@ description: We offer a free service that enables you to detect clones of your w
 ---
 {% include boxes.html columns="3" title="" subtitle="" %}
 
-{% include faqs.html multiple="true" title="Frequently asked questions" category="presale" subtitle="" %}
+{% include trusted.html columns="3" title="" subtitle="" %}
+
+{% include faqs.html multiple="true" title="FAQ" category="presale" subtitle="" %}

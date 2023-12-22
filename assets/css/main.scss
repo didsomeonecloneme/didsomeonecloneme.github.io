@@ -50,3 +50,33 @@ html, body {
 .hero-image img {
   max-height: 120px
 }
+
+.marker {
+  margin: 0 -0.4em;
+  padding: 0.05em 0.4em;
+  border-radius: 0.8em 0.3em;
+  background: transparent;
+  background-image: linear-gradient(
+  to right,
+  rgba(5, 200, 150, 0.1),
+  rgba(5, 200, 150, 0.7) 4%,
+  rgba(5, 200, 150, 0.3)
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.trusted-by {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 4em;
+}
+
+.logo img {
+  max-height: 200px;
+  margin: 0 20px;
+  filter:grayscale(100%);
+}
