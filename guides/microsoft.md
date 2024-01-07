@@ -10,7 +10,7 @@ tags:
   - DSCM
 ---
 
-# Microsoft Tenant installation
+# Microsoft 365 tenant installation
 
 In this guide, we will walk you through the process of installing DSCM on your Microsoft 365 tenant. This allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant.
 
