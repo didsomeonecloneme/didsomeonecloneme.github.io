@@ -2,8 +2,8 @@
 layout: page
 width: xsmall
 permalink: /microsoft-tenant-installation
-title: Microsoft Tenant installation
-metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your Microsoft tenant, ensuring the security and authenticity of your site's content.
+title: Microsoft 365 Tenant installation
+metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your Microsoft 365 tenant, ensuring the security and authenticity of your site's content.
 tags: 
   - Microsoft
   - Portal
@@ -12,7 +12,7 @@ tags:
 
 # Microsoft Tenant installation
 
-In this guide, we will walk you through the process of installing DSCM on your Microsoft tenant. This allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft tenant.
+In this guide, we will walk you through the process of installing DSCM on your Microsoft 365 tenant. This allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant.
 
 ## Step 1: Log in to your Microsoft Tenant
 Open your preferred web browser and go to the [Company Branding page](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/LoginTenantBranding) in the Azure Portal. Login with your tenants administrator account to visit the page.
@@ -52,7 +52,7 @@ The last step is uploading the file into the Azure Portal. Go back to the page o
 
 Click the **Review + Save** button to create the Company Branding.
 
-Congratulations! You've successfully installed DSCM on your Microsoft tenant. From now on, you'll receive email notifications whenever someone uses your Microsoft login page in a phishing attack.
+Congratulations! You've successfully installed DSCM on your Microsoft 365 tenant. From now on, you'll receive email notifications whenever someone uses your Microsoft login page in a phishing attack.
 
 
 
