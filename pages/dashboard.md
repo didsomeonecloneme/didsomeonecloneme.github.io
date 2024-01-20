@@ -30,9 +30,11 @@ description: The DSCM Premium users dashboard.
 </p>
 
 <script>
+  var token = "";
   var u = "https://" + domain + "/dashboard";
   window.addEventListener('@magic/ready', (event) => {
     const { magic, idToken, userMetadata, oauth } = event.detail;
+    token = idToken;
 
     $.ajax({
       url: u,
@@ -86,6 +88,17 @@ description: The DSCM Premium users dashboard.
                 data: 'Status', render: function (data, type, row) {
                   return data == "Online" ? '<font color="green">' + data + '</font>' : '<font color="red">' + data + '</font>';
                 }
+              },
+              {
+                data: 'Webhook', render: function (data, type, row) {
+                  var span = document.getElementById('webhook_enabled');
+                  if (data) {
+                      span.innerHTML = '<font color="green">[ENABLED]</font>';
+                  } else {
+                      span.innerHTML = '<font color="red">[DISABLED]</font>';
+                  }
+                  return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
+                }
               }
             ]
           });
@@ -96,7 +109,7 @@ description: The DSCM Premium users dashboard.
           $('#dashboardTitle').removeAttr('hidden');
           $('#loader').hide();
           $("a[href*='/login']").attr("href", "/logout").text("Logout");
-	  $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
+	        $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
         }
       },
       error: function (error) {
@@ -146,7 +159,55 @@ description: The DSCM Premium users dashboard.
                 <th>Protected website</th>
                 <th>Personal link</th>
                 <th>Status</th>
+                <th>Settings</th>
             </tr>
         </thead>
     </table>
 </div>
+
+<!-- Settings Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="settingsForm">
+        <p><h3>Settings</h3>
+        <p>Configure your settings below.</p>
+        <b>Webhook URL <span id="webhook_enabled"></span></b>
+        <input class="uk-input uk-border-rounded" type="text" id="site" name="site" style="display: none;">
+        <input class="uk-input uk-border-rounded" type="text" id="webhookURL" name="webhookURL">
+        <p>
+        <button class="uk-button uk-button-primary uk-button-small" onclick="storeWebhook(document.getElementById('site').value, document.getElementById('webhookURL').value, token, event)">Save</button></p></p>
+        <p id="messageLabel"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    //modal.style.display = "none";
+    location.reload();
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      //modal.style.display = "none";
+      location.reload();
+    }
+  }
+</script>
+
+<script>
+  function openModal(id, webhook) {
+    modal.style.display = "block";
+    document.getElementById('site').value = id;
+    document.getElementById('webhookURL').value = webhook;
+  }
+</script>
