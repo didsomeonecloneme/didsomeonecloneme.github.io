@@ -32,7 +32,7 @@ function storeWebhook(site, webhook, idToken, event) {
   if (webhook === "") {
     webhook = "undefined";
   }
-  var u = "https://" + domain + "/dashboard?site=" + site + "&webhook=" + webhook;
+  var u = "https://" + domain + "/dashboard?site=" + site + "&webhook=" + encodeURIComponent(webhook);
   $.ajax({
     'url': u,
     'type': "GET",
