@@ -12,4 +12,9 @@
   - domainhiding
   - evidencegathering
   - mitigation
+  - webhooks
   - dashboard
+
+- title: Tutorials
+  docs:
+  - sentinel
