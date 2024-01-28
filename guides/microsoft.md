@@ -12,7 +12,11 @@ tags:
 
 # Microsoft 365 tenant installation
 
-In this guide, we will walk you through the process of installing DSCM on your Microsoft 365 tenant. This allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant. After a detection, you can take appropriate actions to protect your organization and employees. Such as resetting passwords, revoking user sessions, performing investigation, etc.
+In this guide, we will walk you through the process of installing DSCM on your Microsoft 365 tenant. This allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant. 
+
+A detection indicates that one of the users within your tenant attempted to login into the phishing website. This may indicate that access was obtained to his/her account, even bypassing MFA protections.
+
+After a detection, you can take appropriate actions to protect your organization and employees. Such as resetting passwords, revoking user sessions, performing investigation, etc.
 
 ## Step 1: Log in to your Microsoft Tenant
 Open your preferred web browser and go to the [Company Branding page](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/LoginTenantBranding) in the Azure Portal. Login with your tenants administrator account to visit the page.
