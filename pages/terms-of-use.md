@@ -5,7 +5,7 @@ title: Terms of Use
 permalink: /terms-of-use/
 ---
 
-## Terms of Use
+# Terms of Use
 
 ### Introduction
 
