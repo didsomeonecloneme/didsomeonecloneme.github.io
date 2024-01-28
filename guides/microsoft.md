@@ -58,5 +58,4 @@ Click the **Review + Save** button to create the Company Branding.
 
 Congratulations! You've successfully installed DSCM on your Microsoft 365 tenant. From now on, you'll receive email notifications whenever someone uses your Microsoft login page in a phishing attack.
 
-
-
+Looking for more in-depth technical details? Check <a href="https://zolder.io/using-honeytokens-to-detect-aitm-phishing-attacks-on-your-microsoft-365-tenant/" target="_blank">this</a> write-up.
