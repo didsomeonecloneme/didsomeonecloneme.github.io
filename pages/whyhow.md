@@ -9,13 +9,15 @@ description: DSCM is a free to use tool that helps you to detect malicious clone
 
 ## Why DSCM?
 
-DSCM safeguards your website from <a href="/what-is-website-cloning/">fake copies</a> used by cybercriminals. When it finds a copy, it alerts you by email, so you can take action. For example, <a href="/report-a-website-clone/">reporting the fake website</a>, inform your users, and investigate the incident to protect your website, reputation and visitors.
+DSCM is a tool that helps you to detect malicious <a href="/what-is-website-cloning/">clones</a> of your website. Malicious clones are often used in phishing attacks to mislead victims. DSCM also detects more advanced phishing techniques, such as <a href="/microsoft-tenant-installation">Adversary-in-the-Middle (AiTM)</a> phishing attacks. 
+
+When it detects your website being abused in a phishing attack, it alerts you by email, so you can take action. For example, <a href="/report-a-website-clone/">reporting the phishing website</a>, inform your users, and investigate the incident to protect your website, reputation and visitors.
 
 ## How to use DSCM?
 
 Activate the service using the following steps:
 - Sign up by using the form on the <a href="/">homepage</a>, fill in your website domain name and email address
 - Embed the generated link into your websites HTML source code (<a href="/installation">installation</a>)
-- Profit! Get notified once a copy is detected
+- Profit! Get notified once your website is victim of a phishing attack
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/Vn6cuEaXwYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
