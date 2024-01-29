@@ -4,7 +4,7 @@ width: expand
 title: Detect Phishing Attacks
 hero:
     title: Did someone clone me?
-    subtitle: Request a link below and start detecting phishing attacks abusing your website
+    subtitle: Request a link below and start detecting clones of your website
     search: true
     image: dscm.png
 image: /uploads/dscm_sm.png
