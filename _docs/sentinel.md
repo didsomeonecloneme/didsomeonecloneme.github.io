@@ -45,7 +45,7 @@ This will open a Settings popup, where you will need to submit your Webhook endp
 
 ![Popup](/assets/img/blogs/settings_popup.png)
 
-Past the URL of your Logic App into the Webhook field and click **Save**. The setting will go into **[ENABLED]** state.
+Paste the URL of your Logic App into the Webhook field and click **Save**. The setting will go into **[ENABLED]** state.
 Now, whenever a detection occurs, your alert is written to Azure Sentinel:
 
 ![Sentinel](/assets/img/blogs/sentinel.png)
