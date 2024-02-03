@@ -14,12 +14,12 @@ tags:
 
 DSCM allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant. A detection indicates that one of the users within your tenant attempted to login into the phishing website. This may indicate that access was obtained to his/her account, even bypassing protections such as MFA. After a detection, you can take appropriate actions to protect your organization and employees. Such as resetting passwords, revoking user sessions, performing investigation, etc. 
 
-## Install
+## Easy install
 
 <div class="uk-text-center hero-search">
 <form class="uk-search uk-search-default uk-width-1-1" name="search-hero" onsubmit="return false">
       <input id="email" class="uk-search-input uk-box-shadow-large" style="border-radius:50px;padding-left:36px;height:80px" type="search" placeholder="Your email address" autocomplete="off">
-      <p><div id="submitButton"><a id="signup" class="uk-button uk-button-primary" style="font-size: 1.125rem;color:#fff" href="javascript:openPopup()">Sign up for free</a></div></p>
+      <p><div id="submitButton"><a id="signup" class="uk-button uk-button-primary" style="font-size: 1.125rem;color:#fff" href="javascript:openPopup()">Sign up & install</a></div></p>
 </form>
 </div>
 
