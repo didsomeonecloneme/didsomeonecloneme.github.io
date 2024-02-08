@@ -10,18 +10,19 @@ tags:
   - DSCM
 ---
 
-![AiTM phishing](/assets/img/blogs/aitm-ad.png)
+<p class="hero-image uk-text-center"><img src="/uploads/dscm.png" alt="Did someone clone me"></p>
 
-DSCM allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant. A detection indicates that one of the users within your tenant attempted to login into the phishing website. This may indicate that access was obtained to his/her account, even bypassing protections such as MFA. After a detection, you can take appropriate actions to protect your organization and employees. Such as resetting passwords, revoking user sessions, performing investigation, etc. 
-
-## Easy install
-
-<div class="uk-text-center hero-search">
+<h1 class="uk-heading-primary uk-text-center uk-margin-remove-top">Did someone clone me?</h1>
+<p class="uk-text-lead uk-text-center">Detect (AiTM) phishing attacks on your Microsoft 365 tenant</p>
+<div class="uk-text-center hero-search" style="margin:60px;">
 <form class="uk-search uk-search-default uk-width-1-1" name="search-hero" onsubmit="return false">
       <input id="email" class="uk-search-input uk-box-shadow-large" style="border-radius:50px;padding-left:36px;height:80px" type="search" placeholder="Your email address" autocomplete="off">
       <p><div id="submitButton"><a id="signup" class="uk-button uk-button-primary" style="font-size: 1.125rem;color:#fff" href="javascript:openPopup()">Sign up & install</a></div></p>
 </form>
 </div>
+
+### What is this?
+DSCM allows you to get notified whenever a (AITM)-phishing attack is performed against your Microsoft 365 tenant. A detection indicates that one of the users within your tenant attempted to login into the phishing website. This may indicate that access was obtained to his/her account, even bypassing protections such as MFA. After a detection, you can take appropriate actions to protect your organization and employees. Such as resetting passwords, revoking user sessions, performing investigation, etc. 
 
 <script>
     document.addEventListener("keydown", function (event) { 
@@ -62,4 +63,5 @@ DSCM allows you to get notified whenever a (AITM)-phishing attack is performed a
     }
 </script>
 
+### More details
 Do you prefer installing DSCM manually within your tenant? Then check out our <a href="/microsoft-tenant-installation">manual install instructions</a>. Are you looking for technical details how DSCM works? Check <a href="https://zolder.io/using-honeytokens-to-detect-aitm-phishing-attacks-on-your-microsoft-365-tenant/" target="_blank">this</a> write-up.
