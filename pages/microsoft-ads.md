@@ -13,7 +13,7 @@ tags:
 <p class="hero-image uk-text-center"><img src="/uploads/dscm.png" alt="Did someone clone me"></p>
 
 <h1 class="uk-heading-primary uk-text-center uk-margin-remove-top">Did someone clone me?</h1>
-<p class="uk-text-lead uk-text-center">Detect (AiTM) phishing attacks on your Microsoft 365 tenant</p>
+<p class="uk-text-lead uk-text-center">Detect (AiTM) phishing attacks on your Microsoft 365 tenant for free</p>
 <div class="uk-text-center hero-search" style="margin:60px;">
 <form class="uk-search uk-search-default uk-width-1-1" name="search-hero" onsubmit="return false">
       <input id="email" class="uk-search-input uk-box-shadow-large" style="border-radius:50px;padding-left:36px;height:80px" type="search" placeholder="Your email address" autocomplete="off">
