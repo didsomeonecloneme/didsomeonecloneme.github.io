@@ -20,4 +20,8 @@ Activate the service using the following steps:
 - Embed the generated link into your websites HTML source code (<a href="/installation">installation</a>)
 - Profit! Get notified once your website is victim of a phishing attack
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/Vn6cuEaXwYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<div class="outer">
+   <div class="video">
+  <iframe src="https://www.youtube.com/embed/Vn6cuEaXwYw" title="didsomeoneclone.me" allowfullscreen></iframe>
+    </div>
+</div>
