@@ -86,12 +86,6 @@ function theJS() {
             element.classList.add("uk-animation-slide-right");
             element.classList.add("uk-animation-reverse");
 
-            if (params.get('test') == 'true') {
-              var payment_url = "https://buy.stripe.com/test_eVaaIhc3N8OI4iA3cc?prefilled_email=" + email;
-            } else {
-              var payment_url = "https://buy.stripe.com/7sIg1K8bj21X3ja8wz?prefilled_email=" + email;
-            }
-
             if (params.get('plan') == 'premium') {
               generateLink(website, email, plan);
               return;
@@ -110,41 +104,48 @@ function theJS() {
     }
 
 function generateLink(website, email, plan) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == XMLHttpRequest.DONE) {
-          const obj = JSON.parse(xhr.responseText);
+  var element = document.getElementById("hero");
 
-    if (params.get('plan') == 'premium') {
-      location.href = payment_url + "&client_reference_id=" + obj.payment_id;
-    }
-  
-          var element = document.getElementById("hero");
-    if (xhr.status == 200) {
-            element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Sign up completed</h3><p style="font-size:.975rem;">We\'ve sent you an email with <b>installation instructions.</div>';
-          } else {
-            element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Error occured</h3><p id="error"></p><p><a href="/">Try again</a></p></div>';
-            document.getElementById('error').innerText = obj.message;
-  }
-        var element = document.getElementById("hero");
-        element.classList.remove("uk-animation-scale-up");
-        element.classList.remove("uk-animation-slide-right-medium");
-        element.classList.add("uk-animation-slide-left");
-      }
-    }
-
-    if (params.get('test') == 'true') {
-  var url = "https://api-test.didsomeoneclone.me/generatelink";
+  if (params.get('test') == 'true') {
+        var url = "https://api-test.didsomeoneclone.me/generatelink";
     } else {
         var url = "https://api.didsomeoneclone.me/generatelink";
     }
 
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    var data = JSON.stringify({"mail": email, "site": website, "plan": plan});
-    xhr.send(data);
+    post_data = {
+      "site": website,
+      "mail": email,
+      "plan": plan
     }
+
+    $.ajax({
+      'url': url,
+      'type': "POST",
+      'data': JSON.stringify(post_data),
+      'dataSrc': 'data',
+      'success': function (data) {
+        // Get the payment_link from the data
+        if (plan == 'premium') {
+          var resp = JSON.parse(data);
+          var payment_link = resp.payment_link;
+          // Redirect the user to the payment_link
+          window.location.href = payment_link;
+        } else {
+          element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Sign up completed</h3><p style="font-size:.975rem;">We\'ve sent you an email with <b>installation instructions.</div>';
+        }
+      },
+      'error': function (jqXHR, textStatus, errorThrown) {
+        element.innerHTML='<div class="uk-card uk-card-default uk-card-body"><h3 class="uk-card-title">Error occured</h3><p id="error"></p><p><a href="/">Try again</a></p></div>';
+        document.getElementById('error').innerText = errorThrown;
+        console.error('Error:', errorThrown);
+      }
+    });
+
+    var element = document.getElementById("hero");
+    element.classList.remove("uk-animation-scale-up");
+    element.classList.remove("uk-animation-slide-right-medium");
+    element.classList.add("uk-animation-slide-left");
+  }
 }
 </script>
   

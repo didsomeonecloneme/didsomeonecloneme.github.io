@@ -14,6 +14,9 @@ description: The DSCM Premium users dashboard.
 
 <p>
 <div id="dashboardButtons" hidden>
+<button class="uk-button uk-button-premium" onclick="showOrderOverview()">
+  New order
+</button>&nbsp;
 <button class="uk-button uk-button-primary" onclick="showDetectionsOverview()">
   Detections overview
 </button>&nbsp;
@@ -30,7 +33,7 @@ description: The DSCM Premium users dashboard.
 </p>
 
 <script>
-  var token = "";
+  let token;
   var u = "https://" + domain + "/dashboard";
   window.addEventListener('@magic/ready', (event) => {
     const { magic, idToken, userMetadata, oauth } = event.detail;
@@ -60,13 +63,17 @@ description: The DSCM Premium users dashboard.
                   if (data.startsWith('http')) {
                     return '<a href="' + data + '" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Analysis</button></a>'
                   } else {
-                    return '';
+                    return 'N/A';
                   }
                 }
               },
               {
                 data: 'Mitigate threat', render: function (data, type, row) {
-                  return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'block_user_input\')">Mitigate</button>'
+                  if (row.Website === 'microsoftonline.com') {
+                    return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'' + row.Mitigations[0] + '\')">Warn users</button>';
+                  } else {
+                    return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'' + row.Mitigations[0] + '\')">Block input</button>';
+                  }
                 }
               },
               {
@@ -91,19 +98,14 @@ description: The DSCM Premium users dashboard.
               },
               {
                 data: 'Webhook', render: function (data, type, row) {
-                  var span = document.getElementById('webhook_enabled');
-                  if (data) {
-                      span.innerHTML = '<font color="green">[ENABLED]</font>';
-                  } else {
-                      span.innerHTML = '<font color="red">[DISABLED]</font>';
-                  }
-                  return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
+                  return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
                 }
               }
             ]
           });
 
           $('#installations_table_wrapper').hide();
+          $('#order').hide();
           $('#table').removeAttr('hidden');
           $('#dashboardButtons').removeAttr('hidden');
           $('#dashboardTitle').removeAttr('hidden');
@@ -140,29 +142,43 @@ description: The DSCM Premium users dashboard.
 </div>
 <div id="table" hidden>
 <table id="history_table" class="stripe" style="width:100%">
-        <thead>
-            <tr>
-                <th>Last update</th>
-                <th>Clone</th>
-                <th>Cloned website</th>
-                <th>Statistics</th>
-                <th>Automated analysis</th>
-                <th>Mitigate threat</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-    </table>
+    <thead>
+        <tr>
+            <th>Last update</th>
+            <th>Clone</th>
+            <th>Cloned website</th>
+            <th>Statistics</th>
+            <th>Automated analysis</th>
+            <th>Mitigate threat</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+</table>
 
 <table id="installations_table" class="stripe" style="width:100%">
-        <thead>
-            <tr>
-                <th>Protected website</th>
-                <th>Personal link</th>
-                <th>Status</th>
-                <th>Settings</th>
-            </tr>
-        </thead>
-    </table>
+    <thead>
+        <tr>
+            <th>Protected website</th>
+            <th>Personal link</th>
+            <th>Status</th>
+            <th>Settings</th>
+        </tr>
+    </thead>
+</table>
+
+<div id="order" style="width:100%">
+  <p>Order a new Premium plan using the form below:</p>
+  <form id="addWebsiteForm">
+    <input class="uk-input uk-form-width-medium" type="text" id="domainInput" placeholder="Enter domain">
+    <button class="uk-button uk-button-premium" type="submit">Add website</button>
+  </form>
+  <script>
+    document.getElementById('addWebsiteForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      addPlan(token);
+    });
+  </script>
+</div>
 </div>
 
 <!-- Settings Modal -->
@@ -176,11 +192,13 @@ description: The DSCM Premium users dashboard.
         <input class="uk-input uk-border-rounded" type="text" id="site" name="site" style="display: none;">
         <input class="uk-input uk-border-rounded" type="text" id="webhookURL" name="webhookURL">
         <p>
-        <button class="uk-button uk-button-primary uk-button-small" onclick="storeWebhook(document.getElementById('site').value, document.getElementById('webhookURL').value, token, event)">Save</button></p></p>
+        <b>Automated mitigations <span id="auto_mitigate_enabled"></span></b>
+        <select id="mitigationDropdown" class="uk-select">
+        </select>
+        <br>
+        <p>
+        <button class="uk-button uk-button-primary" onclick="storeSettingsForm(document.getElementById('site').value, document.getElementById('webhookURL').value, token, event, document.getElementById('mitigationDropdown').value)">Save</button></p></p>
         <p id="messageLabel"></p>
-    </form>
-  </div>
-</div>
 
 <script>
   // Get the modal
@@ -205,9 +223,43 @@ description: The DSCM Premium users dashboard.
 </script>
 
 <script>
-  function openModal(id, webhook) {
+  function openModal(id, webhook, mitigations, mitigated) {
     modal.style.display = "block";
+
+    var span = document.getElementById('webhook_enabled');
+    if (webhook) {
+        span.innerHTML = '<font color="green">[ENABLED]</font>';
+    } else {
+        span.innerHTML = '<font color="red">[DISABLED]</font>';
+    }
+
+    var span = document.getElementById('auto_mitigate_enabled');
+    if (mitigated) {
+        span.innerHTML = '<font color="green">[ENABLED]</font>';
+    } else {
+        span.innerHTML = '<font color="red">[DISABLED]</font>';
+    }
+
+    var dropdown = document.getElementById('mitigationDropdown');
+    // Add an empty option
+    var emptyOption = document.createElement('option');
+    emptyOption.text = '';
+    emptyOption.value = '';
+    dropdown.add(emptyOption);
+
+    var option = document.createElement('option');
+    option.text = mitigations;
+    option.value = mitigations;
+    dropdown.add(option);
+
     document.getElementById('site').value = id;
     document.getElementById('webhookURL').value = webhook;
-  }
+
+    for (var i = 0; i < dropdown.options.length; i++) {
+      if (dropdown.options[i].text === mitigated) {
+        dropdown.selectedIndex = i;
+        break;
+      }
+    }
+}
 </script>
