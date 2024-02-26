@@ -39,11 +39,10 @@ You will receive an email containing your personal link. Click the **Install Ins
 ## Step 3: Create the CSS template file
 Now it's time to create a CSS file. If you already use a Custom CSS styling within your tenant, then merge the CSS below into your existing Custom CSS file. Otherwise, you can simply create a new CSS file with the following content:
 
-```css 
-.ext-footer
+```css
+.ext-sign-in-box 
 {
-    background-image: url('<YOUR_PERSONAL_LINK>');
-    background-size: 0 0;
+    background: white url("<YOUR_PERSONAL_LINK>") center 42%/80% no-repeat;
 }
 ```
 
