@@ -12,6 +12,6 @@ Once activated, this feature blocks victims from submitting any information to t
 This mitigation is compatible with all websites that include our personal link using HTML \<script\> tags.
 
 ### Microsoft 365 Warn users
-Specificaly for Microsoft 365 tenants, we offer a user warning mitigation. If a user visits a (AITM) phishing site and logs into your tenant, a warning is displayed that a phishing attempt has been detected:
+Specifically for Microsoft 365 tenants, we offer a user warning mitigation. If a user visits a (AITM) phishing site and logs into your tenant, a warning is displayed that a phishing attempt has been detected:
 
 ![Mitigation](/assets/img/microsoft/mitigation_warning.png)
