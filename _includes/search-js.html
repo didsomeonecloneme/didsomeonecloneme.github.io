@@ -104,18 +104,25 @@ function theJS() {
     }
 
 function generateLink(website, email, plan) {
-  var element = document.getElementById("hero");
+    var element = document.getElementById("hero");
 
-  if (params.get('test') == 'true') {
+    if (params.get('test') == 'true') {
         var url = "https://api-test.didsomeoneclone.me/generatelink";
     } else {
         var url = "https://api.didsomeoneclone.me/generatelink";
     }
 
+    if (params.get('period') == 'yearly') {
+      var period = 'yearly';
+    } else {
+      var period = 'monthly';
+    }
+
     post_data = {
       "site": website,
       "mail": email,
-      "plan": plan
+      "plan": plan,
+      "period": period
     }
 
     $.ajax({
