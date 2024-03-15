@@ -1,5 +1,12 @@
 # Changelog page source
 
+- title: Version 2024.03
+  label: RELEASE
+  date: March, 2024
+  list:
+   - Add Microsoft 365 Mitigation
+   - And many other things..
+
 - title: Version 2024.01
   label: RELEASE
   date: January, 2024
