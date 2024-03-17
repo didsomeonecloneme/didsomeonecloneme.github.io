@@ -1,4 +1,5 @@
 var domain;
+var period = "monthly";
 
 if (window.location.hostname.includes('didsomeoneclone.me')) {
   domain = "api.didsomeoneclone.me";
@@ -79,7 +80,7 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate) {
 
 function addPlan(idToken) {
   var domain = document.getElementById('domainInput').value;
-  var url = u + '?action=new_plan&domain=' + encodeURIComponent(domain);
+  var url = u + '?action=new_plan&domain=' + encodeURIComponent(domain) + '&period=' + encodeURIComponent(period);
   $.ajax({
       'url': url,
       'type': "GET",
@@ -95,4 +96,38 @@ function addPlan(idToken) {
           console.error('Error:', errorThrown);
         }
     });
+}
+
+function togglePeriod() {
+  // Get the 'a' element with id 'price_period'
+  const pricePeriodLink = document.getElementById('price_period');
+  // Get the 'span' element with id 'total'
+  const totalSpan = document.getElementById('total');
+
+  // If the current value is 'monthly', change it to 'yearly'
+  if (period === 'monthly') {
+    period = 'yearly';
+    // Change the text content of the 'price_period' link
+    if (pricePeriodLink) {
+      pricePeriodLink.textContent = "Pay Monthly";
+    }
+    // Change the text content of the 'total' span
+    if (totalSpan) {
+      totalSpan.textContent = "€120 / year";
+    }
+  }
+  // If the current value is 'yearly', change it to 'monthly'
+  else if (period === 'yearly') {
+    period = 'monthly';
+    // Change the text content of the 'price_period' link
+    if (pricePeriodLink) {
+      pricePeriodLink.textContent = "Pay Annually";
+    }
+    // Change the text content of the 'total' span
+    if (totalSpan) {
+      totalSpan.textContent = "€10 / month";
+    }
+  }
+
+  console.log(period);
 }

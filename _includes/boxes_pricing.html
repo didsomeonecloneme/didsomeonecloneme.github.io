@@ -45,10 +45,10 @@
                     {% endfor %}
 		    </ul>
                     {% if item.price %}
-                      <span style="color: #05c896; font-size: 16px; font-weight: bold;" id="price_{{item.name}}">{{ item.price }}</span>
+                      <span style="color: #05c896; font-size: 16px; font-weight: bold; display: none;" id="price_{{item.name}}">{{ item.price }}</span>
                     {% endif %}
 		    <br /><br />
-		    <div id="submitButton"><a href="/?plan={{item.name}}" id="b" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff">Get {{item.name}}</a></div>
+		    <div id="pricing_button"><a href="/?plan={{item.name}}" id="select_{{item.name}}" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff">Get {{item.name}}</a></div>
                 </div>
             </div>
             {% endif %}

@@ -18,7 +18,7 @@
     - name: ❌ No mitigations
     - name: ❌ No webhook support
     - name: ❌ No Dashboard Access
-  price: €0 / month
+  price: 0
 
 - title: Premium
   desc: Best protection available. Mitigate clones with our premium plan
@@ -46,4 +46,4 @@
       link: /docs/webhooks
     - name: ✅ Premium Dashboard
       link: /docs/dashboard
-  price: €10 / month
+  price: 10
