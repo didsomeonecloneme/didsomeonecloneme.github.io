@@ -22,8 +22,11 @@ description: The DSCM Premium users dashboard.
 </button>&nbsp;
 <button class="uk-button uk-button-primary" onclick="showInstallationsOverview()">
   Installations overview
-</button>
-&nbsp;<button id="subscription_button" class="uk-button uk-button-primary" onclick="location.href='https://billing.stripe.com/p/login/3cs18a29O1kk7zq4gg'">
+</button>&nbsp;
+<button class="uk-button uk-button-primary" onclick="showTools()">
+  Tools
+</button>&nbsp;
+<button id="subscription_button" class="uk-button uk-button-primary" onclick="location.href='https://billing.stripe.com/p/login/3cs18a29O1kk7zq4gg'">
   Manage subscription
 </button>&nbsp;
 <button class="uk-button uk-button-danger">
@@ -106,6 +109,7 @@ description: The DSCM Premium users dashboard.
 
           $('#installations_table_wrapper').hide();
           $('#order').hide();
+          $('#tools').hide();
           $('#table').removeAttr('hidden');
           $('#dashboardButtons').removeAttr('hidden');
           $('#dashboardTitle').removeAttr('hidden');
@@ -185,6 +189,13 @@ description: The DSCM Premium users dashboard.
     <div id="submitButton"><a id="price_period" class="uk-button uk-button-success" style="font-size: 1.125rem; color: #ffffff; border-bottom: 0px" onclick="togglePeriod()">Pay Annually</a>
     </div>
   </p>
+</div>
+
+<div id="tools" style="width:100%">
+  <p>We offer tools to test our service:</p>
+  <ul>
+    <li><a href="https://microsoft.dscm.dev" target="_blank">Microsoft AITM Detection tester</a></li>
+  </ul>
 </div>
 </div>
 

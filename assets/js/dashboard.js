@@ -1,7 +1,7 @@
 var domain;
 var period = "monthly";
 
-if (window.location.hostname.includes('didsomeoneclone.me')) {
+if (window.location.hostname === 'didsomeoneclone.me') {
   domain = "api.didsomeoneclone.me";
 } else {
   domain = "api-test.didsomeoneclone.me";
@@ -23,16 +23,26 @@ function showDetectionsOverview() {
   $('#history_table_wrapper').show();
   $('#installations_table_wrapper').hide();
   $('#order').hide();
+  $('#tools').hide();
 }
 
 function showInstallationsOverview() {
   $('#installations_table_wrapper').show();
   $('#history_table_wrapper').hide();
   $('#order').hide();
+  $('#tools').hide();
 }
 
 function showOrderOverview() {
   $('#order').show();
+  $('#installations_table_wrapper').hide();
+  $('#history_table_wrapper').hide();
+  $('#tools').hide();
+}
+
+function showTools() {
+  $('#tools').show();
+  $('#order').hide();
   $('#installations_table_wrapper').hide();
   $('#history_table_wrapper').hide();
 }
