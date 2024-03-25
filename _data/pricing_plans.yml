@@ -47,3 +47,18 @@
     - name: ✅ Premium Dashboard
       link: /docs/dashboard
   price: 10
+  recommended: true
+
+- title: Enterprise
+  desc: Self hosted solution. Full control. Managed and Support by us
+  name: enterprise
+  list:
+    - name: ✅ All features
+    - name: ✅ Unlimited websites
+    - name: ✅ Hosted on your Azure
+    - name: ✅ Full control
+    - name: ✅ Managed by us
+    - name: ✅ Support
+    - name: ✅ Custom domains
+    - name: ✅ Customizations
+  price: On request

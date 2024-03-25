@@ -1,6 +1,6 @@
 ---
 layout: page
-width: xsmall
+width: xmedium
 title: Pricing \| Our plans
 permalink: /pricing/
 image: /uploads/dscm_sm.png
@@ -9,7 +9,7 @@ description: If you have any questions or concerns regarding our clone detection
 
 <script src="/assets/js/pricing.js"></script>
 
-{% include boxes_pricing.html columns="2" title="" title="Our plans" %}
+{% include boxes_pricing.html columns="3" title="" title="Our plans" %}
 
 <center>
 <p>

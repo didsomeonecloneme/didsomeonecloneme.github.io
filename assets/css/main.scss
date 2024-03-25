@@ -106,3 +106,18 @@ iframe {
   z-index: 5;
   position: absolute;
 }
+
+.recommended {
+  border: 2px solid #ffd700; /* Change the color as needed */
+  padding: 10px; /* Adjust the padding as needed */
+  position: relative;
+}
+
+.recommended::before {
+  content: "Best Value";
+  position: absolute;
+  top: -10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  background: #fff; /* Change the color as needed */
+  padding: 0 5px; /* Adjust the padding as needed */
+}

@@ -12,16 +12,18 @@ function adjustPricesBasedOnPeriod() {
     if (spans[i].id.startsWith('price_')) {
       spans[i].style.display = '';
       
-      // Get the value from the span and convert it to a number
-      let price = parseFloat(spans[i].textContent);
+      if (spans[i].textContent !== 'On request') {
+        // Get the value from the span and convert it to a number
+        let price = parseFloat(spans[i].textContent);
 
-      // If the period is 'yearly', multiply the price by 12
-      if (period === 'yearly') {
-        price *= 12;
+        // If the period is 'yearly', multiply the price by 12
+        if (period === 'yearly') {
+          price *= 12;
+        }
+
+        // Add a euro sign in front of the value and '/ month' or '/ year' depending on the period value
+        spans[i].textContent = '€ ' + price.toFixed(2) + (period === 'yearly' ? ' / year' : ' / month');
       }
-
-      // Add a euro sign in front of the value and '/ month' or '/ year' depending on the period value
-      spans[i].textContent = '€ ' + price.toFixed(2) + (period === 'yearly' ? ' / year' : ' / month');
     }
   }
 
