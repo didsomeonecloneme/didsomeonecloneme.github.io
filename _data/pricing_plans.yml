@@ -10,7 +10,8 @@
       link: /docs/requests
     - name: ✅ Quarterly reports
       link: /docs/reports
-    - name: ❌ Max 1 clone p/m
+    - name: ✅ Unlimited clones
+      link: /docs/clones
     - name: ❌ No manual reviews
     - name: ❌ Basic detection
     - name: ❌ No domain hiding

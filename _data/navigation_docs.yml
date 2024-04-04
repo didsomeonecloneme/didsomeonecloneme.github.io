@@ -3,10 +3,10 @@
   - notifications
   - requests
   - reports
+  - clones
 
 - title: Premium features
   docs:
-  - clones
   - reviews
   - detections
   - domainhiding
