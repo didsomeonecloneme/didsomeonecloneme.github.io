@@ -1,7 +1,12 @@
 var domain;
 var period = "monthly";
 
-if (window.location.hostname === 'didsomeoneclone.me') {
+const hostnamePattern = /^dscm-management-(.{6})\.azurewebsites\.net$/;
+const match = window.location.hostname.match(hostnamePattern);
+
+if (match) {
+  domain = `dscm-api-${match[1]}.azurewebsites.net`;
+} else if (window.location.hostname === 'didsomeoneclone.me') {
   domain = "api.didsomeoneclone.me";
 } else {
   domain = "api-test.didsomeoneclone.me";
