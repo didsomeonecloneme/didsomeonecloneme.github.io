@@ -11,31 +11,59 @@ description: The DSCM Premium users login page.
   <title>Login</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- 1️⃣ Install Magic SDK -->
-  <script src="https://auth.magic.link/sdk"></script>
+  <script src="/assets/js/dashboard.js"></script>
   <script>
-    /* 2️⃣ Initialize Magic Instance */
-    let magic = new Magic("pk_live_3A7B3A29118F5872");
+    function handleLogin(event) {
+        event.preventDefault();
 
-    /* 4️⃣ Implement Login Handler */
-    const handleLogin = async (e) => {
-      e.preventDefault();
-      const email = new FormData(e.target).get("email");
-      const redirectURI = `${window.location.origin}/dashboard`;
-      if (email) {
-        /* One-liner login 🤯 */
-        await magic.auth.loginWithEmailOTP({ email, redirectURI });
-        document.location = redirectURI;
-      }
-    };
+        var email = document.querySelector('input[name="email"]').value;
+        var url = `https://${domain}/login`;
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById("login_form").style.display = "none";
+                document.getElementById("login_succeeded").style.display = "block";
+                document.getElementById("login_failed").style.display = "none";
+            } else {
+                document.getElementById("login_form").style.display = "none";
+                document.getElementById("login_succeeded").style.display = "none";
+                document.getElementById("login_failed").style.display = "block";
+            }
+            if (data.error) {
+                document.getElementById("login_form").style.display = "none";
+                document.getElementById("login_succeeded").style.display = "none";
+                document.getElementById("login_failed").style.display = "block";
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while logging in.');
+        });
+    }
   </script>
 </head>
 <body>
-  <h1>Premium Dashboard</h1>
-  <form class="uk-form" onsubmit="handleLogin(event)">
-    <input type="email" name="email" required="required" class="uk-input uk-form-width-large" placeholder="Email" />
-    <p>
-    <button class="uk-button uk-button-primary" type="submit"><b>Login</b></button>
-    </p>
-  </form>
+  <div id="login_form">
+    <h1>Premium Dashboard</h1>
+    <form class="uk-form" onsubmit="handleLogin(event)">
+      <input type="email" name="email" required="required" class="uk-input uk-form-width-large" placeholder="Email" />
+      <p>
+      <button class="uk-button uk-button-primary" type="submit"><b>Login</b></button>
+      </p>
+    </form>
+  </div>
+  <div id="login_succeeded" style="display: none;">
+    We've sent you an email with a login link.
+  </div>
+  <div id="login_failed" style="display: none;">
+    Login failed. Please try later again.
+  </div>
 </body>

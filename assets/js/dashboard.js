@@ -18,7 +18,7 @@ function mitigate(threat, idToken, type) {
     'url': u,
     'type': "GET",
     'dataSrc': 'data',
-    'beforeSend': function (request) { request.setRequestHeader("Authorization", "Bearer " + idToken); }
+    'beforeSend': function (request) { request.setRequestHeader("Authorization", idToken); }
   }).done(function() {
     location.reload();
   });
@@ -67,7 +67,7 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate) {
     'url': u,
     'type': "GET",
     'dataSrc': 'data',
-    'beforeSend': function (request) { request.setRequestHeader("Authorization", "Bearer " + idToken); }
+    'beforeSend': function (request) { request.setRequestHeader("Authorization", idToken); }
   }).done(function() {
     document.getElementById('messageLabel').innerHTML = 'Settings saved successfully';
     document.getElementById('messageLabel').style.color = 'green';
@@ -100,7 +100,7 @@ function addPlan(idToken) {
       'url': url,
       'type': "GET",
       'dataSrc': 'data',
-      'beforeSend': function (request) { request.setRequestHeader("Authorization", "Bearer " + idToken); },
+      'beforeSend': function (request) { request.setRequestHeader("Authorization", idToken); },
       'success': function (data) {
         // Get the payment_link from the data
         var payment_link = data.payment_link;

@@ -9,7 +9,6 @@ description: The DSCM Premium users dashboard.
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="/assets/css/dashboard.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://auth.magic.link/pnp/callback" data-magic-publishable-api-key="pk_live_3A7B3A29118F5872"></script>
 <script type="text/javascript" src="/assets/js/dashboard.js"></script>
 
 <p>
@@ -38,19 +37,24 @@ description: The DSCM Premium users dashboard.
 <script>
   let token;
   var u = "https://" + domain + "/dashboard";
-  window.addEventListener('@magic/ready', (event) => {
-    const { magic, idToken, userMetadata, oauth } = event.detail;
+  window.addEventListener('load', (event) => {
+    var urlParams = new URLSearchParams(window.location.search);
+    var idToken = urlParams.get('token');
     token = idToken;
 
     $.ajax({
       url: u,
       dataType: 'json',
-      beforeSend: function (request) { request.setRequestHeader("Authorization", "Bearer " + idToken); },
+      beforeSend: function (request) { request.setRequestHeader("Authorization", idToken); },
       success: function (data) {
         if (data.error && data.error === 'No Premium plan found.') {
           $('#loader').hide();
           $('#dashboardTitle').html("❌ Access denied. No Premium plan found. <a href='/?plan=premium'>Sign up here</a> to get Premium.");
           $('#dashboardTitle').removeAttr('hidden');
+        } else if (data.error) {
+          $('#loader').hide();
+          $('#dashboardTitle').html("❌ Error occured. Your token may be expired. Please try to login again.");
+          $('#dashboardTitle').removeAttr('hidden');   
         } else {
           // Populate the history table
           $('#history_table').DataTable({
