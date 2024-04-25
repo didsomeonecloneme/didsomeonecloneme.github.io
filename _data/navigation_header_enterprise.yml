@@ -1,8 +1,11 @@
 # Navbar left menu navigation links
 
 left:
-  - title: Login
+  - title: Home
     url: /
+
+  - title: Installation
+    url: /installation/
 
   - title: About
     url: /contact/

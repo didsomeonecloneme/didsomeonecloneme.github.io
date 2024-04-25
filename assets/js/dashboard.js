@@ -12,6 +12,106 @@ if (match) {
   domain = "api-test.didsomeoneclone.me";
 }
 
+function wakeUp() {
+  var u = "https://" + domain + "/generatelink";
+  $.ajax({
+    'url': u,
+    'type': "GET"
+  });
+}
+
+function loadData() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var idToken = urlParams.get('token');
+  token = idToken;
+
+  $.ajax({
+    url: u,
+    dataType: 'json',
+    beforeSend: function (request) { request.setRequestHeader("Authorization", idToken); },
+    success: function (data) {
+      if (data.error && data.error === 'No Premium plan found.') {
+        $('#loader').hide();
+        $('#dashboardTitle').html("❌ Access denied. No Premium plan found. <a href='/?plan=premium'>Sign up here</a> to get Premium.");
+        $('#dashboardTitle').removeAttr('hidden');
+      } else if (data.error) {
+        $('#loader').hide();
+        $('#dashboardTitle').html("❌ Error occurred. Your token may be expired. Please try to login again.");
+        $('#dashboardTitle').removeAttr('hidden');   
+      } else {
+        // Populate the history table
+        $('#history_table').DataTable({
+          data: data.data,
+          order: [[0, 'desc']],
+          columns: [
+            { data: 'Date' },
+            { data: 'Clone' },
+            { data: 'Website' },
+            { data: 'Statistics', render: function (data, type, row) { return data + ' views' } },
+            {
+              data: 'Automated analysis', render: function (data, type, row) {
+                if (data.startsWith('http')) {
+                  return '<a href="' + data + '" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Analysis</button></a>'
+                } else {
+                  return 'N/A';
+                }
+              }
+            },
+            {
+              data: 'Mitigate threat', render: function (data, type, row) {
+                if (row.Website === 'microsoftonline.com') {
+                  return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'' + row.Mitigations[0] + '\')">Warn users</button>';
+                } else {
+                  return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'' + row.Mitigations[0] + '\')">Block input</button>';
+                }
+              }
+            },
+            {
+              data: 'Status', render: function (data, type, row) {
+                return data == "Offline" ? '<font color="red">' + data + '</font>' : '<font color="green">' + data + '</font>';
+              }
+            }
+          ]
+        });
+
+        // Populate the installations table
+        $('#installations_table').DataTable({
+          data: data.installations,
+          order: [[0, 'desc']],
+          columns: [
+            { data: 'Protected website' },
+            { data: 'Personal link' },
+            {
+              data: 'Status', render: function (data, type, row) {
+                return data == "Online" ? '<font color="green">' + data + '</font>' : '<font color="red">' + data + '</font>';
+              }
+            },
+            {
+              data: 'Webhook', render: function (data, type, row) {
+                return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
+              }
+            }
+          ]
+        });
+
+        $('#installations_table_wrapper').hide();
+        $('#history_table_wrapper').hide();
+        $('#tools').hide();
+        $('#table').removeAttr('hidden');
+        $('#dashboardButtons').removeAttr('hidden');
+        $('#dashboardTitle').removeAttr('hidden');
+        $('#loader').hide();
+        $("a[href*='/login']").attr("href", "/logout").text("Logout");
+        $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
+        wakeUp();
+      }
+    },
+    error: function (error) {
+      console.error(error);
+    }
+  });
+}
+
 function mitigate(threat, idToken, type) {
   var u = "https://" + domain + "/dashboard?mitigate=" + threat + "&type=" + type;
   $.ajax({
@@ -123,14 +223,20 @@ function addPlan(idToken) {
           newElement.innerHTML = "<br><b>Protected website </b>";
           orderDiv.appendChild(newElement);
           orderDiv.appendChild(domainText);
-          
-          var buttons = document.getElementsByTagName('button');
-          for (var i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function() {
-              document.getElementById('order').innerHTML = originalState;
-            });
+          $('#dashboardButtons').hide();
+
+          var goBackButton = document.createElement('button');
+          goBackButton.textContent = 'Go Back';
+          goBackButton.classList.add('uk-button');
+          goBackButton.classList.add('uk-button-premium');
+          goBackButton.addEventListener('click', function() {
+            window.location.reload();
+          });
+          var newElement = document.createElement('div');
+          newElement.innerHTML = "<br>";
+          orderDiv.appendChild(newElement);
+          orderDiv.appendChild(goBackButton);
           }
-        }
         },
         'error': function (jqXHR, textStatus, errorThrown) {
           console.error('Error:', errorThrown);
