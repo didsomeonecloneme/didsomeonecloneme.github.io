@@ -30,4 +30,4 @@ steps:
     azureSubscription: 'Azure didsomeoneclone.me service connection'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az storage blob upload --account-name ${env:AZURE_STORAGE_ACCOUNT_NAME} --account-key ${env:AZURE_STORAGE_ACCOUNT_KEY} --name 4f7e5548-1575-4b1d-acb9-c9baa0d52f50.zip --type block --file $(Build.ArtifactStagingDirectory)/4f7e5548-1575-4b1d-acb9-c9baa0d52f50.zip --container-name ${env:AZURE_STORAGE_CONTAINER_NAME} --overwrite'
+    inlineScript: 'az storage blob upload --account-name $(AZURE_STORAGE_ACCOUNT_NAME) --account-key $(AZURE_STORAGE_ACCOUNT_KEY) --name 4f7e5548-1575-4b1d-acb9-c9baa0d52f50.zip --type block --file $(Build.ArtifactStagingDirectory)/4f7e5548-1575-4b1d-acb9-c9baa0d52f50.zip --container-name $(AZURE_STORAGE_CONTAINER_NAME) --overwrite'
