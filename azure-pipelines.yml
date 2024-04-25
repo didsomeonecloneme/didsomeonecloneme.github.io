@@ -19,8 +19,8 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '/tmp/jekyll/_site'
+    rootFolderOrFile: '$(build.binariesDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '/tmp/$(Build.BuildId).zip'
     replaceExistingArchive: true 
