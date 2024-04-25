@@ -14,7 +14,7 @@ steps:
     volumes: |
       $(build.sourcesDirectory):/tmp/jekyll
       $(build.binariesDirectory):/tmp/jekyll/_site
-    containerCommand: 'jekyll build --future'  # Change permissions to allow writing
+    containerCommand: 'jekyll build --future  --source /tmp/jekyll --destination /tmp/jekyll/_site'
     detached: false
 
 - task: ArchiveFiles@2
