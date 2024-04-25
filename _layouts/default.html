@@ -4,11 +4,13 @@
     {% include head.html %}
 
     <body>
-    {% if page.hero %}
-        {% include hero.html %}
-    {% else %}
-        {% include navbar.html %}
-    {% endif %}
+        {% if page.hero %}
+            {% if jekyll.environment != 'enterprise' %}
+                {% include hero.html %}
+            {% endif %}
+        {% else %}
+            {% include navbar.html %}
+        {% endif %}
 
     {{ content }}
 

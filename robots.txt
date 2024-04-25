@@ -1,10 +1,14 @@
 ---
 layout: none
 ---
-
+{% if jekyll.environment == 'enterprise' %}
+User-agent: *
+Disallow: *
+{% else %}
 User-agent: *
 Disallow: /unsubscribed/
 Disallow: /failed/
 Disallow: /confirmationfailed/
 Disallow: /responsible-disclosure/
 Sitemap: {{ site.url }}/sitemap.xml
+{% endif %}
