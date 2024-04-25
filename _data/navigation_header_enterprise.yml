@@ -1,0 +1,13 @@
+# Navbar left menu navigation links
+
+left:
+  - title: Login
+    url: /
+
+  - title: About
+    url: /contact/
+
+right:
+  - title: Dashboard
+    url: /login/
+    button: success

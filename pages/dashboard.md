@@ -25,9 +25,11 @@ description: The DSCM Premium users dashboard.
 <button class="uk-button uk-button-primary" onclick="showTools()">
   Tools
 </button>&nbsp;
+{% if jekyll.environment != 'enterprise' %}
 <button id="subscription_button" class="uk-button uk-button-primary" onclick="location.href='https://billing.stripe.com/p/login/3cs18a29O1kk7zq4gg'">
   Manage subscription
 </button>&nbsp;
+{% endif %}
 <button class="uk-button uk-button-danger">
   <a href="/contact" style="color: #fff; border-bottom:0px">Need help?</a>
 </button>
@@ -174,6 +176,21 @@ description: The DSCM Premium users dashboard.
     </thead>
 </table>
 
+{% if jekyll.environment == 'enterprise' %}
+<div id="order" style="width:100%">
+  <p>Add a new link below:</p>
+  <form id="addWebsiteForm">
+    <input class="uk-input uk-form-width-medium" type="text" id="domainInput" placeholder="Enter domain">
+    <button class="uk-button uk-button-premium" type="submit">Add website</button>
+  </form>
+  <script>
+    document.getElementById('addWebsiteForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      addPlan(token);
+    });
+  </script>
+</div>
+{% else %}
 <div id="order" style="width:100%">
   <p>Order a new Premium plan using the form below:</p>
   <form id="addWebsiteForm">
@@ -194,6 +211,7 @@ description: The DSCM Premium users dashboard.
     </div>
   </p>
 </div>
+{% endif %}
 
 <div id="tools" style="width:100%">
   <p>We offer tools to test our service:</p>

@@ -4,9 +4,15 @@
 <footer class="uk-section uk-text-center uk-text-muted">
     <div class="uk-container uk-container-small">
 
+        {% if jekyll.environment == 'enterprise' %}
+            {% assign footer_header_file = 'navigation_footer_enterprise' %}
+        {% else %}
+            {% assign footer_header_file = 'navigation_footer' %}
+        {% endif %}
+
         <div>
             <ul class="uk-subnav uk-flex-center">
-                {% for link in site.data.navigation_footer %}
+                {% for link in site.data[footer_header_file] %}
                     {% if link.url contains 'http' %}
                         {% assign domain = '' %}
                     {% else %}

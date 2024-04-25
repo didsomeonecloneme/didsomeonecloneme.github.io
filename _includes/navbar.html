@@ -5,8 +5,14 @@
                 <div class="uk-navbar-left">
                     <a class="uk-navbar-item uk-logo uk-visible@m" href="{{ "/" | relative_url }}">{% if site.logo %}<img src="{{ site.uploads | absolute_url }}{{ site.logo }}" alt="{{ site.title | escape }}">{% else %}{{ site.title | escape }}{% endif %}</a>
 
+                    {% if jekyll.environment == 'enterprise' %}
+                        {% assign nav_header_file = 'navigation_header_enterprise' %}
+                    {% else %}
+                        {% assign nav_header_file = 'navigation_header' %}
+                    {% endif %}
+
                     <ul class="uk-navbar-nav uk-visible@m">
-                        {% for link in site.data.navigation_header.left %}
+                        {% for link in site.data[nav_header_file].left %}
                             {% if link.url contains 'http' %}
                                 {% assign domain = '' %}
                             {% else %}
@@ -84,7 +90,7 @@
                     {% endif %}
 
                     <ul class="uk-navbar-nav uk-visible@m">
-                        {% for link in site.data.navigation_header.right %}
+                        {% for link in site.data[nav_header_file].right %}
                             {% if link.url contains 'http' %}
                                 {% assign domain = '' %}
                             {% else %}

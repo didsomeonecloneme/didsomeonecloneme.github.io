@@ -102,10 +102,35 @@ function addPlan(idToken) {
       'dataSrc': 'data',
       'beforeSend': function (request) { request.setRequestHeader("Authorization", idToken); },
       'success': function (data) {
-        // Get the payment_link from the data
-        var payment_link = data.payment_link;
-        // Redirect the user to the payment_link
-        window.location.href = payment_link;
+        if (data.payment_link) {
+          // Get the payment_link from the data
+          var payment_link = data.payment_link;
+          // Redirect the user to the payment_link
+          window.location.href = payment_link;
+        } else if (data.link) {
+          var originalState = document.getElementById('order').innerHTML;
+          var textNode1 = document.createTextNode("Link successfully added to your profile.");
+          var link = document.createTextNode(data.link);
+          var domainText = document.createTextNode(domain);
+          var orderDiv = document.getElementById('order');
+          orderDiv.innerHTML = '';
+          orderDiv.appendChild(textNode1);
+          var newElement = document.createElement('div');
+          newElement.innerHTML = "<br><b>Personal link </b>";
+          orderDiv.appendChild(newElement);
+          orderDiv.appendChild(link);
+          var newElement = document.createElement('div');
+          newElement.innerHTML = "<br><b>Protected website </b>";
+          orderDiv.appendChild(newElement);
+          orderDiv.appendChild(domainText);
+          
+          var buttons = document.getElementsByTagName('button');
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+              document.getElementById('order').innerHTML = originalState;
+            });
+          }
+        }
         },
         'error': function (jqXHR, textStatus, errorThrown) {
           console.error('Error:', errorThrown);
