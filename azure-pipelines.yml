@@ -19,7 +19,7 @@ steps:
     volumes: |
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
-    containerCommand: 'jekyll build --future'
+    containerCommand: 'chmod -R 777 /srv/jekyll && jekyll build --future'
     detached: false
 
 - task: ArchiveFiles@2
