@@ -52,7 +52,7 @@ description: The DSCM Premium users login page.
 </head>
 <body>
   <div id="login_form">
-    <h1>Premium Dashboard</h1>
+    <h1>{% if jekyll.environment == 'enterprise' %}Enterprise{% else %}Premium{% endif %} Dashboard</h1>
     <form class="uk-form" onsubmit="handleLogin(event)">
       <input type="email" name="email" required="required" class="uk-input uk-form-width-large" placeholder="Email" />
       <p>
