@@ -22,5 +22,14 @@ steps:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/4f7e5548-1575-4b1d-acb9-c9baa0d52f50.zip'
     replaceExistingArchive: true
+
+- task: AzureFileCopy@6
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/4f7e5548-1575-4b1d-acb9-c9baa0d52f50.zip'
+    azureSubscription: 'Azure didsomeoneclone.me service connection'
+    Destination: 'AzureBlob'
+    storage: 'dscmarmstorage'
+    ContainerName: 'management'
+
