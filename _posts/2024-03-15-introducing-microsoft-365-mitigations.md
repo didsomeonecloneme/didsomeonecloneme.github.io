@@ -18,7 +18,7 @@ What does the warning look like? The video below demonstrates the warning that w
 
 ## Installation
 To enable our Mitigation on your tenant:
-- Sign up for a <a href="https://10.202.0.112:4000/pricing/">Premium plan</a>
+- Sign up for a <a href="/pricing/">Premium plan</a>
 - Follow the installation instructions ([install instructions](https://didsomeoneclone.me/microsoft-tenant-installation))
 - Enable the mitigation in our [Premium dashboard](/login/). Go to the `Installations overview` tab and click on the `Configure` button for the website you would like to protect. Select the dropdown under the `Automated mitigations` setting and select `warn_user`
 
