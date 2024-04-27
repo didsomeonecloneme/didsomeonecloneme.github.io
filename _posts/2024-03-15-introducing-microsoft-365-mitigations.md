@@ -12,7 +12,7 @@ What does the warning look like? The video below demonstrates the warning that w
 
 <div class="outer">
    <div class="video">
-    <iframe src="https://youtube.com/embed/oqw0Cu50nfI" title="Microsoft 365 Mitigation" allowfullscreen></iframe>
+    <iframe src="https://youtube.com/embed/tc_pIrjx7o0" title="Microsoft 365 Mitigation" allowfullscreen></iframe>
     </div>
 </div>
 
