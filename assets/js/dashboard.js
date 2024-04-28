@@ -12,14 +12,6 @@ if (match) {
   domain = "api-test.didsomeoneclone.me";
 }
 
-function wakeUp() {
-  var u = "https://" + domain + "/generatelink";
-  $.ajax({
-    'url': u,
-    'type': "GET"
-  });
-}
-
 function loadData() {
   var urlParams = new URLSearchParams(window.location.search);
   var idToken = urlParams.get('token');
@@ -103,7 +95,6 @@ function loadData() {
         $('#loader').hide();
         $("a[href*='/login']").attr("href", "/logout").text("Logout");
         $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
-        wakeUp();
       }
     },
     error: function (error) {
@@ -194,6 +185,8 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate) {
 }
 
 function addPlan(idToken) {
+  $('#order').hide();
+  $('#loader').show();
   var domain = document.getElementById('domainInput').value;
   var url = u + '?action=new_plan&domain=' + encodeURIComponent(domain) + '&period=' + encodeURIComponent(period);
   $.ajax({
@@ -237,6 +230,8 @@ function addPlan(idToken) {
           orderDiv.appendChild(newElement);
           orderDiv.appendChild(goBackButton);
           }
+          $('#loader').hide();
+          $('#order').show();
         },
         'error': function (jqXHR, textStatus, errorThrown) {
           console.error('Error:', errorThrown);
