@@ -89,6 +89,36 @@ description: The DSCM Premium users dashboard.
     </thead>
 </table>
 
+<div id="users">
+  <table id="users_table" class="stripe" style="width:100%">
+      <thead>
+          <tr>
+              <th>Username</th>
+              <th>Remove</th>
+          </tr>
+      </thead>
+  </table>
+  <form id="addUser">
+    <input class="uk-input uk-form-width-medium" type="text" id="userInput" placeholder="Enter email">
+    <button class="uk-button uk-button-premium" type="submit">Add user</button>
+  </form>
+  <script>
+    document.getElementById('addUser').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const userInput = document.getElementById('userInput');
+      const email = userInput.value;
+
+      if (!validateEmail(email)) {
+          alert('Please enter a valid email address.');
+          return;
+      }
+
+      addUser(token);
+    });
+  </script>
+</div>
+
 {% if jekyll.environment == 'enterprise' %}
 <div id="order" style="width:100%">
   <p>Add a new link below:</p>

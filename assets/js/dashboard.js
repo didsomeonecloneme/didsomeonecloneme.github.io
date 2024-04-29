@@ -12,6 +12,107 @@ if (match) {
   domain = "api-test.didsomeoneclone.me";
 }
 
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function addAdminButton() {
+  var urlParams = new URLSearchParams(window.location.search);
+  $.ajax({
+      url: "https://" + domain + '/dashboard?action=is_admin',
+      type: 'GET',
+      headers: {
+          'Authorization': urlParams.get('token')
+      },
+      success: function(data) {
+          if (data.success) {
+              const dashboardButtons = document.getElementById('dashboardButtons');
+              if (dashboardButtons) {
+                  const button = document.createElement('button');
+                  button.textContent = 'Users';
+                  button.classList.add('uk-button', 'uk-button-primary');
+                  button.addEventListener('click', showUserOverview);
+                  dashboardButtons.appendChild(button);
+              }
+          }
+      },
+      error: function(error) {
+          console.error('Error:', error);
+      }
+  });
+}
+
+function showUserOverview() {
+  $('#history_table_wrapper').hide();
+  $('#installations_table_wrapper').hide();
+  $('#users').show();
+  $('#order').hide();
+  $('#tools').hide();
+
+  var urlParams = new URLSearchParams(window.location.search);
+  $.ajax({
+    url: "https://" + domain + '/dashboard?action=get_users',
+    type: 'GET',
+    headers: {
+        'Authorization': urlParams.get('token')
+    },
+    success: function(data) {
+        const usersTable = $('#users_table').DataTable();
+        usersTable.clear();
+
+        for (const userId in data) {
+            const userMail = data[userId].Mail;
+            const deleteButton = `<button onclick="deleteUser('${userMail}')" class="uk-button uk-button-danger">Remove</button>`;
+            usersTable.row.add([userMail, deleteButton]);
+        }
+
+        usersTable.draw();
+    },
+    error: function(error) {
+        console.error('Error:', error);
+    }
+});
+}
+
+function addUser(idToken) {
+  $('#users').hide();
+  $('#loader').show();
+  var username = document.getElementById('userInput').value;
+  var url = u + '?action=add_user&username=' + encodeURIComponent(username);
+  $.ajax({
+      'url': url,
+      'type': "GET",
+      'dataSrc': 'data',
+      'beforeSend': function (request) { request.setRequestHeader("Authorization", idToken); },
+      'success': function () {
+          showUserOverview();
+          $('#loader').hide();
+          $('#users').show();
+        },
+        'error': function (jqXHR, textStatus, errorThrown) {
+          console.error('Error:', errorThrown);
+        }
+    });
+}
+
+function deleteUser(userMail) {
+  var urlParams = new URLSearchParams(window.location.search);
+  $.ajax({
+      url: "https://" + domain + '/dashboard?action=delete_user&username=' + userMail,
+      type: 'GET',
+      headers: {
+          'Authorization': urlParams.get('token')
+      },
+      success: function(data) {
+          showUserOverview();
+      },
+      error: function(error) {
+          console.error('Error:', error);
+      }
+  });
+}
+
 function loadData() {
   var urlParams = new URLSearchParams(window.location.search);
   var idToken = urlParams.get('token');
@@ -86,6 +187,8 @@ function loadData() {
           ]
         });
 
+        $('#users_table').DataTable();
+        $('#users').hide();
         $('#installations_table_wrapper').hide();
         $('#history_table_wrapper').hide();
         $('#tools').hide();
@@ -95,6 +198,7 @@ function loadData() {
         $('#loader').hide();
         $("a[href*='/login']").attr("href", "/logout").text("Logout");
         $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
+        addAdminButton();
       }
     },
     error: function (error) {
@@ -118,6 +222,7 @@ function mitigate(threat, idToken, type) {
 function showDetectionsOverview() {
   $('#history_table_wrapper').show();
   $('#installations_table_wrapper').hide();
+  $('#users').hide();
   $('#order').hide();
   $('#tools').hide();
 }
@@ -125,6 +230,7 @@ function showDetectionsOverview() {
 function showInstallationsOverview() {
   $('#installations_table_wrapper').show();
   $('#history_table_wrapper').hide();
+  $('#users').hide();
   $('#order').hide();
   $('#tools').hide();
 }
@@ -133,6 +239,7 @@ function showOrderOverview() {
   $('#order').show();
   $('#installations_table_wrapper').hide();
   $('#history_table_wrapper').hide();
+  $('#users').hide();
   $('#tools').hide();
 }
 
@@ -141,6 +248,7 @@ function showTools() {
   $('#order').hide();
   $('#installations_table_wrapper').hide();
   $('#history_table_wrapper').hide();
+  $('#users').hide();
 }
 
 function storeSettingsForm(site, webhook, idToken, event, mitigate) {
