@@ -123,9 +123,13 @@ function loadData() {
     dataType: 'json',
     beforeSend: function (request) { request.setRequestHeader("Authorization", idToken); },
     success: function (data) {
-      if (data.error && data.error === 'No Premium plan found.') {
+      if (data.error && data.error === 'No Premium plan found.' && data.enterprise === "false") {
         $('#loader').hide();
         $('#dashboardTitle').html("❌ Access denied. No Premium plan found. <a href='/?plan=premium'>Sign up here</a> to get Premium.");
+        $('#dashboardTitle').removeAttr('hidden');
+      } else if (data.error && data.error === 'No Premium plan found.' && data.enterprise === "true")  {
+        $('#loader').hide();
+        $('#dashboardTitle').html("❌ Access denied. No account found.");
         $('#dashboardTitle').removeAttr('hidden');
       } else if (data.error) {
         $('#loader').hide();
