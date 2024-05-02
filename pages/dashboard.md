@@ -188,7 +188,7 @@ description: The DSCM Premium users dashboard.
             <select id="mitigationDropdown" class="uk-select"></select>
         </p>
         <p>
-            <b>Enable detection filtering <span id="filtering_enabled"></span></b>
+            <b>Intelligent detection filtering <span id="filtering_enabled"></span></b>
             <br>
             <label for="filtered">
                 <input type="checkbox" id="filtered" name="filtered"> Filtered
