@@ -83,6 +83,7 @@ description: The DSCM Premium users dashboard.
         <tr>
             <th>Protected website</th>
             <th>Personal link</th>
+            <th>Description</th>
             <th>Status</th>
             <th>Settings</th>
         </tr>
@@ -169,20 +170,33 @@ description: The DSCM Premium users dashboard.
   <div class="modal-content">
     <span class="close">&times;</span>
     <form id="settingsForm">
-        <p><h3>Settings</h3>
+        <p>
+            <h3>Settings</h3>
+        </p>
         <p>Configure your settings below.</p>
-        <b>Webhook URL <span id="webhook_enabled"></span></b>
         <input class="uk-input uk-border-rounded" type="text" id="site" name="site" style="display: none;">
-        <input class="uk-input uk-border-rounded" type="text" id="webhookURL" name="webhookURL">
         <p>
-        <b>Automated mitigations <span id="auto_mitigate_enabled"></span></b>
-        <select id="mitigationDropdown" class="uk-select">
-        </select>
-        <br>
+            <b>Description</b>
+            <input class="uk-input uk-border-rounded" type="text" id="description" name="description">
+        </p>
         <p>
-        <button class="uk-button uk-button-primary" onclick="storeSettingsForm(document.getElementById('site').value, document.getElementById('webhookURL').value, token, event, document.getElementById('mitigationDropdown').value)">Save</button></p></p>
+            <b>Webhook URL <span id="webhook_enabled"></span></b>
+            <input class="uk-input uk-border-rounded" type="text" id="webhookURL" name="webhookURL">
+        </p>
+        <p>
+            <b>Automated mitigations <span id="auto_mitigate_enabled"></span></b>
+            <select id="mitigationDropdown" class="uk-select"></select>
+        </p>
+        <p>
+            <b>Enable detection filtering <span id="filtering_enabled"></span></b>
+            <br>
+            <label for="filtered">
+                <input type="checkbox" id="filtered" name="filtered"> Filtered
+            </label>
+        </p>
+        <button class="uk-button uk-button-primary" onclick="storeSettingsForm(document.getElementById('site').value, document.getElementById('webhookURL').value, token, event, document.getElementById('mitigationDropdown').value, document.getElementById('description').value, document.getElementById('filtered').checked)">Save</button>
         <p id="messageLabel"></p>
-
+    </form>
 <script>
   // Get the modal
   var modal = document.getElementById("myModal");
@@ -206,7 +220,7 @@ description: The DSCM Premium users dashboard.
 </script>
 
 <script>
-  function openModal(id, webhook, mitigations, mitigated) {
+  function openModal(id, webhook, mitigations, mitigated, filtered, description) {
     modal.style.display = "block";
 
     var span = document.getElementById('webhook_enabled');
@@ -223,6 +237,16 @@ description: The DSCM Premium users dashboard.
         span.innerHTML = '<font color="red">[DISABLED]</font>';
     }
 
+    var span = document.getElementById('filtering_enabled');
+    var filtered_checkbox = document.getElementById("filtered");
+    if ((filtered === "true") || (filtered === "")) {
+        span.innerHTML = '<font color="green">[ENABLED]</font>';
+        filtered_checkbox.checked = true;
+    } else {
+        span.innerHTML = '<font color="red">[DISABLED]</font>';
+        filtered_checkbox.checked = false;
+    }
+
     var dropdown = document.getElementById('mitigationDropdown');
     // Add an empty option
     var emptyOption = document.createElement('option');
@@ -237,6 +261,7 @@ description: The DSCM Premium users dashboard.
 
     document.getElementById('site').value = id;
     document.getElementById('webhookURL').value = webhook;
+    document.getElementById('description').value = description;
 
     for (var i = 0; i < dropdown.options.length; i++) {
       if (dropdown.options[i].text === mitigated) {

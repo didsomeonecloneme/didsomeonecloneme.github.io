@@ -178,6 +178,7 @@ function loadData() {
           columns: [
             { data: 'Protected website' },
             { data: 'Personal link' },
+            { data: 'Description'},
             {
               data: 'Status', render: function (data, type, row) {
                 return data == "Online" ? '<font color="green">' + data + '</font>' : '<font color="red">' + data + '</font>';
@@ -185,7 +186,7 @@ function loadData() {
             },
             {
               data: 'Webhook', render: function (data, type, row) {
-                return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
+                return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\', \'' + row.Filtered + '\', \'' + row.Description + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
               }
             }
           ]
@@ -255,7 +256,7 @@ function showTools() {
   $('#users').hide();
 }
 
-function storeSettingsForm(site, webhook, idToken, event, mitigate) {
+function storeSettingsForm(site, webhook, idToken, event, mitigate, description, filtered) {
   event.preventDefault();
   if (webhook === "") {
     webhook = "undefined";
@@ -265,7 +266,11 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate) {
     mitigate = "undefined";
   }
 
-  var u = "https://" + domain + "/dashboard?site=" + site + "&webhook=" + encodeURIComponent(webhook) + "&mitigate=" + mitigate;
+  if (description === "") {
+    mitigate = "undefined";
+  }
+
+  var u = "https://" + domain + "/dashboard?site=" + site + "&webhook=" + encodeURIComponent(webhook) + "&mitigate=" + mitigate + "&description=" + encodeURIComponent(description) + "&filtered=" + filtered;
   $.ajax({
     'url': u,
     'type': "GET",
@@ -287,6 +292,13 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate) {
       span.innerHTML = '<font color="red">[DISABLED]</font>';
     } else {
       var span = document.getElementById('auto_mitigate_enabled');
+      span.innerHTML = '<font color="green">[ENABLED]</font>';
+    }
+    if (!filtered) {
+      var span = document.getElementById('filtering_enabled');
+      span.innerHTML = '<font color="red">[DISABLED]</font>';
+    } else {
+      var span = document.getElementById('filtering_enabled');
       span.innerHTML = '<font color="green">[ENABLED]</font>';
     }
   })
