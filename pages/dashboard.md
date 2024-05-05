@@ -14,7 +14,7 @@ description: The DSCM Premium users dashboard.
 <p>
 <div id="dashboardButtons" hidden>
 <button class="uk-button uk-button-premium" onclick="showOrderOverview()">
-  New order
+  New
 </button>&nbsp;
 <button class="uk-button uk-button-primary" onclick="showDetectionsOverview()">
   Detections overview
