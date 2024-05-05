@@ -267,7 +267,7 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate, description,
   }
 
   if (description === "") {
-    mitigate = "undefined";
+    description = "undefined";
   }
 
   var u = "https://" + domain + "/dashboard?site=" + site + "&webhook=" + encodeURIComponent(webhook) + "&mitigate=" + mitigate + "&description=" + encodeURIComponent(description) + "&filtered=" + filtered;
