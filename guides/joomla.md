@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /joomla-installation
+permalink: /joomla-installation/
 title: Joomla! installation
 image: /uploads/dscm_sm.png
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your Joomla! website using a plugin, ensuring the security and authenticity of your site's content.

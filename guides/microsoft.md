@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /microsoft-tenant-installation
+permalink: /microsoft-tenant-installation/
 title: Microsoft 365 Tenant installation
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your Microsoft 365 tenant, ensuring the security and authenticity of your site's content.
 tags: 

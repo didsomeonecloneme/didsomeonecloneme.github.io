@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /manual-installation
+permalink: /manual-installation/
 title: Manual installation
 image: /uploads/dscm_sm.png
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your website using a manual installation, ensuring the security and authenticity of your site's content.

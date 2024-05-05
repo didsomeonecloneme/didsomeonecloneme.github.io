@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /wordpress-installation
+permalink: /wordpress-installation/
 title: Wordpress installation
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your WordPress website using a plugin, ensuring the security and authenticity of your site's content.
 tags: 

@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /google-tag-manager-installation
+permalink: /google-tag-manager-installation/
 title: Google Tag Manager (GTM) installation
 image: /uploads/dscm_sm.png
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your website using Google Tag Manager (GTM), ensuring the security and authenticity of your site's content.

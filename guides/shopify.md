@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /shopify-installation
+permalink: /shopify-installation/
 title: Shopify installation
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your Shopify website using a plugin, protecting your shop against website clones.
 tags: 

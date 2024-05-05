@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /okta-installation
+permalink: /okta-installation/
 title: Okta installation
 metaDesc: Learn how to seamlessly integrate DSCM into your Okta login page
 tags: 

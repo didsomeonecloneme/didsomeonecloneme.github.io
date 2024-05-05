@@ -1,7 +1,7 @@
 ---
 layout: page
 width: xsmall
-permalink: /drupal-installation
+permalink: /drupal-installation/
 title: Drupal installation
 image: /uploads/dscm_sm.png
 metaDesc: Learn how to seamlessly integrate DSCM (Did someone clone me) into your Drupal website using a plugin, ensuring the security and authenticity of your site's content.
