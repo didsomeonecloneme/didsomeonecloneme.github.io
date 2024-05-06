@@ -1,11 +1,11 @@
-- title: General features
+- title: General
   docs:
   - notifications
   - requests
   - reports
   - clones
 
-- title: Premium features
+- title: Features
   docs:
   - reviews
   - detections
@@ -13,8 +13,16 @@
   - evidencegathering
   - mitigation
   - webhooks
+  - tools
   - dashboard
+
+- title: Enterprise
+  docs:
+  - enterprise_configure_admin
+  - enterprise_configure_webhook
+  - enterprise_detection_sharing
 
 - title: Tutorials
   docs:
   - sentinel
+  - idf

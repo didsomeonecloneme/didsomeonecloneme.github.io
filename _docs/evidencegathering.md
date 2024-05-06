@@ -4,7 +4,7 @@ subtitle: This document covers the automated evidence gathering feature
 tags: [evidencegathering]
 ---
 
-In our Premium plan, we automatically conduct technical analysis after detecting a clone. This analysis includes the following information:
+In our Premium and Enterprise plan, we automatically conduct technical analysis after detecting a clone. This analysis includes the following information:
 * whois details
 * requests performed when visiting the clone
 * hashes of the cloned pages

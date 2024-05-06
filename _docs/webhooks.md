@@ -4,7 +4,7 @@ subtitle: This document covers the Webhook support feature
 tags: [webhook]
 ---
 
-For our Premium features, we provide webhooks. This allows you to write all the detections to a external system. For example a SIEM environment. Our webhooks send JSON via a POST-request to the provided URL. The table below shows all fields that are available via our webhook:
+For our Premium and Enterprise users, we provide webhooks. This allows you to write all the detections to a external system. For example a SIEM environment. Our webhooks send JSON via a POST-request to the provided URL. The table below shows all fields that are available via our webhook:
 
 | Key   |      Value      | 
 |----------|:-------------|
