@@ -4,10 +4,15 @@ subtitle: This document covers the clone mitigation feature
 tags: [mitigation]
 ---
 
-Within our Premium and Enterprise plans we provide clone mitigation features. We offer different types of mitigations, depending on the site being protected. This page shows the different types of mitigations we offer. Mitigations are optionally and need to be enabled via the Premium dashboard.
+Within our Premium and Enterprise plans we provide clone mitigation features. We offer different types of mitigations, depending on the site being protected. This page shows the different types of mitigations we offer. Mitigations are optionally and need to be enabled via the Dashboard.
 
 ### Block user input
 Once activated, this feature blocks victims from submitting any information to the phishing site. This proactive measure prevents victims from disclosing sensitive information, including usernames, passwords, and financial details.
+
+This mitigation is compatible with all websites that include our personal link using HTML \<script\> tags.
+
+### Redirect users
+If a victim visits a phishing page, this feature redirects the victim immediately to the real website. This prevents the user visiting the phishing site.
 
 This mitigation is compatible with all websites that include our personal link using HTML \<script\> tags.
 
