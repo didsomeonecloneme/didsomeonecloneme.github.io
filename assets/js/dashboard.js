@@ -155,15 +155,6 @@ function loadData() {
               }
             },
             {
-              data: 'Mitigate threat', render: function (data, type, row) {
-                if (row.Website === 'microsoftonline.com') {
-                  return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'' + row.Mitigations[0] + '\')">Warn users</button>';
-                } else {
-                  return '<button class="uk-button uk-button-primary uk-button-small" onclick="mitigate(\'' + data + '\', \'' + idToken + '\', \'' + row.Mitigations[0] + '\')">Block input</button>';
-                }
-              }
-            },
-            {
               data: 'Status', render: function (data, type, row) {
                 return data == "Offline" ? '<font color="red">' + data + '</font>' : '<font color="green">' + data + '</font>';
               }

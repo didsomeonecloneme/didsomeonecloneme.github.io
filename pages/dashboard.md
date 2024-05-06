@@ -72,7 +72,6 @@ description: The DSCM Premium users dashboard.
             <th>Cloned website</th>
             <th>Statistics</th>
             <th>Automated analysis</th>
-            <th>Mitigate threat</th>
             <th>Status</th>
         </tr>
     </thead>
@@ -254,10 +253,13 @@ description: The DSCM Premium users dashboard.
     emptyOption.value = '';
     dropdown.add(emptyOption);
 
-    var option = document.createElement('option');
-    option.text = mitigations;
-    option.value = mitigations;
-    dropdown.add(option);
+    var mitigations = mitigations.split(",");
+    mitigations.forEach(function(mitigation) {
+        var option = document.createElement('option');
+        option.text = mitigation;
+        option.value = mitigation;
+        dropdown.add(option);
+    });
 
     document.getElementById('site').value = id;
     document.getElementById('webhookURL').value = webhook;
