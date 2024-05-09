@@ -48,7 +48,7 @@
                       <span style="color: #05c896; font-size: 16px; font-weight: bold; display: none;" id="price_{{item.name}}">{{ item.price }}</span>
                     {% endif %}
 		    <br /><br />
-		    <div id="pricing_button">{% if item.name == 'enterprise' %}<a href="mailto:contact@didsomeoneclone.me?subject=Quote request for Enterprise plan" id="select_{{item.name}}" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff">Request a Quote</a>{% else %}<a href="/?plan={{item.name}}" id="select_{{item.name}}" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff">Get {{ item.name }}</a>{% endif %}</div>
+		    <div id="pricing_button">{% if item.name == 'enterprise' %}<a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zolderbv1714139676050.didsomeonecloneme?tab=Overview" id="select_{{item.name}}" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff" target="_blank">Get Enterprise</a>{% else %}<a href="/?plan={{item.name}}" id="select_{{item.name}}" class="uk-button uk-button-primary" style="font-size: 1.125rem; color: #ffffff">Get {{ item.name }}</a>{% endif %}</div>
                 </div>
             </div>
             {% endif %}
