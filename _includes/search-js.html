@@ -119,8 +119,8 @@ function generateLink(website, email, plan) {
     }
 
     post_data = {
-      "site": website,
-      "mail": email,
+      "site": website.toLowerCase(),
+      "mail": email.toLowerCase(),
       "plan": plan,
       "period": period
     }

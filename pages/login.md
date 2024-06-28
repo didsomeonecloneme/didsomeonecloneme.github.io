@@ -24,7 +24,7 @@ description: The DSCM Premium users login page.
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ email: email.toLowerCase() })
     })
     .then(response => response.json())
     .then(data => {
