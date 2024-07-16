@@ -7,6 +7,8 @@ image: /uploads/dscm_sm.png
 description: If you have any questions or concerns regarding our clone detection services, please don't hesitate to get in touch with us.
 ---
 
+[![Attic](/uploads/attic_banner.png)](https://atticsecurity.com)
+
 ## About us
 DSCM is developed by <a href="https://www.linkedin.com/in/wesleyneelen/">Wesley Neelen</a>, co-founder of the cybersecurity startup <a href="https://zolder.io/">Zolder</a> and mobile app <a href="https://atticsecurity.com/">Attic</a>. 
 I have been working for more then 10 years as an ethical hacker / penetration tester. In this role the main task is to find vulnerabilities within IT-environments of customers and advising them on how to mitigate the vulnerabilities.
