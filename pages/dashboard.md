@@ -160,6 +160,7 @@ description: The DSCM Premium users dashboard.
   <p>We offer tools to test our service:</p>
   <ul>
     <li><a href="https://microsoft.dscm.dev" target="_blank">Microsoft AITM Detection tester</a></li>
+    <li><a href="https://generic.dscm.dev" target="_blank">Generic website tester</a></li>
   </ul>
 </div>
 </div>
