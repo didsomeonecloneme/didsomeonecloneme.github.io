@@ -63,5 +63,6 @@
       link: /docs/detections
     - name: ✅ Support
     - name: ✅ Custom domains
+    - name: ✅ Customize warning styling
     - name: ✅ Customizations
   price:
