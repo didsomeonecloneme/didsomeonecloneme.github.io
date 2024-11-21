@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Getting started with Enterprise
 subtitle: How to get started with our Enterprise Plan.
 tags: [enterprise]
 ---

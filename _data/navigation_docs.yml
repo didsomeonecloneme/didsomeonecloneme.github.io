@@ -1,11 +1,11 @@
-- title: General
+- title: Free
   docs:
   - notifications
   - requests
   - reports
   - clones
 
-- title: Features
+- title: Premium
   docs:
   - reviews
   - detections
@@ -18,12 +18,21 @@
 
 - title: Enterprise
   docs:
-  - enterprise_getting_started
-  - enterprise_configure_admin
-  - enterprise_configure_webhook
-  - enterprise_detection_sharing
+  - enterprise_all_features
+  - enterprise_unlimited_websites
+  - enterprise_hosted_in_your_tenant
+  - enterprise_full_control
+  - enterprise_managed_by_us
+  - enterprise_support
+  - enterprise_custom_domain
+  - enterprise_custom_warning_styling
+  - enterprise_customizations
 
 - title: Tutorials
   docs:
   - sentinel
   - idf
+  - enterprise_getting_started
+  - enterprise_configure_admin
+  - enterprise_configure_webhook
+  - enterprise_detection_sharing

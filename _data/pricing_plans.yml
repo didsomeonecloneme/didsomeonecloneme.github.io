@@ -55,14 +55,23 @@
   name: enterprise
   list:
     - name: ✅ All features
+      link: /docs/enterprise_all_features/
     - name: ✅ Unlimited websites
+      link: /docs/enterprise_unlimited_websites/
     - name: ✅ Hosted on your Azure
+      link: /docs/enterprise_hosted_in_your_tenant/
     - name: ✅ Full control over your data
+      link: /docs/enterprise_full_control/
     - name: ✅ Managed by us
+      link: /docs/enterprise_managed_by_us/
     - name: ✅ Private detections
       link: /docs/detections
     - name: ✅ Support
+      link: /docs/enterprise_support/
     - name: ✅ Custom domains
+      link: /docs/enterprise_custom_domain/
     - name: ✅ Customize warning styling
+      link: /docs/enterprise_custom_warning_styling/
     - name: ✅ Customizations
+      link: /docs/enterprise_customizations/
   price:
