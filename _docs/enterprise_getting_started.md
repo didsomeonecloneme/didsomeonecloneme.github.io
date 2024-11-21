@@ -17,7 +17,7 @@ Once the deployment is finished, open your web browser and go to the management 
 Replace `xxxxxx` with the specific name assigned during deployment.
 
 ## 3. Log In
-Log in to the management portal using your admin email address defined in the first step. If the login doesn’t work right away, don’t worry—it might take a few minutes for everything to be ready. Try again later a few minutes later.
+Log in to the management portal using your admin email address defined in the first step. If the login doesn’t work right away, don’t worry—it might take a few minutes for everything to be ready. Try again a few minutes later.
 
 ## 4. Start Using the Platform
 Once logged in, you’re ready to start using your Enterprise environment.
