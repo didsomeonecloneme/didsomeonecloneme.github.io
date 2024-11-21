@@ -18,6 +18,7 @@
 
 - title: Enterprise
   docs:
+  - enterprise_getting_started
   - enterprise_configure_admin
   - enterprise_configure_webhook
   - enterprise_detection_sharing
