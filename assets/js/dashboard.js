@@ -175,9 +175,18 @@ function loadData() {
                 return data == "Online" ? '<font color="green">' + data + '</font>' : '<font color="red">' + data + '</font>';
               }
             },
+            { 
+              data: 'm365_logmon_enabled',
+              render: function (data, type, row) {
+                if (row.m365_logmon_auth === "") {
+                  return 'N/A';
+                }
+                return data ? '<font color="green">Enabled</font>' : '<font color="red">Disabled</font>';
+              }
+            },
             {
               data: 'Webhook', render: function (data, type, row) {
-                return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\', \'' + row.Filtered + '\', \'' + row.Description + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
+                return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\', \'' + row.Filtered + '\', \'' + row.Description + '\', \'' + row.m365_logmon_enabled + '\', \'' + row.m365_logmon_auth + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
               }
             }
           ]

@@ -84,6 +84,7 @@ description: The DSCM Premium users dashboard.
             <th>Personal link</th>
             <th>Description</th>
             <th>Status</th>
+            <th>Log monitoring</th>
             <th>Settings</th>
         </tr>
     </thead>
@@ -179,6 +180,13 @@ description: The DSCM Premium users dashboard.
             <b>Description</b>
             <input class="uk-input uk-border-rounded" type="text" id="description" name="description">
         </p>
+          <p>
+            <div id="logmon_container">
+            <b>Log monitoring <span id="logmon_enabled"></span></b>
+            <br>
+            <button class="uk-button uk-button-primary uk-border-rounded" style="background-color: #0078d4;" id="logmon_enable_button" name="logmon_enable_button">Configure</button>
+            </div>
+        </p>
         <p>
             <b>Webhook URL <span id="webhook_enabled"></span></b>
             <input class="uk-input uk-border-rounded" type="text" id="webhookURL" name="webhookURL">
@@ -220,7 +228,7 @@ description: The DSCM Premium users dashboard.
 </script>
 
 <script>
-  function openModal(id, webhook, mitigations, mitigated, filtered, description) {
+  function openModal(id, webhook, mitigations, mitigated, filtered, description, logmon, logmon_enable_link) {
     modal.style.display = "block";
 
     var span = document.getElementById('webhook_enabled');
@@ -246,6 +254,37 @@ description: The DSCM Premium users dashboard.
         span.innerHTML = '<font color="red">[DISABLED]</font>';
         filtered_checkbox.checked = false;
     }
+
+    var logmonContainer = document.getElementById('logmon_container');
+    if (logmon_enable_link != "") {
+        logmonContainer.style.display = 'block';
+    } else {
+        logmonContainer.style.display = 'none';
+    }
+
+    var span = document.getElementById('logmon_enabled');
+    console.log('logmon value:', logmon);
+    console.log('logmon type:', typeof logmon);
+    if (logmon == "true") {
+        span.innerHTML = '<font color="green">[ENABLED]</font>';
+    } else {
+        span.innerHTML = '<font color="red">[DISABLED]</font>';
+    }
+
+    var button = document.getElementById('logmon_enable_button');
+    button.onclick = function(e) {
+        e.preventDefault();
+        if (logmon_enable_link) {
+            const popupWindow = window.open(logmon_enable_link, '_blank', 'width=800,height=600,resizable=yes');
+            
+            const timer = setInterval(() => {
+                if (popupWindow.closed) {
+                    clearInterval(timer);
+                    location.reload();
+                }
+            }, 500);
+        }
+    };
 
     var dropdown = document.getElementById('mitigationDropdown');
     // Add an empty option
