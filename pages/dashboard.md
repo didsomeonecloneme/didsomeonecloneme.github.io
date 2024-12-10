@@ -13,16 +13,16 @@ description: The DSCM Premium users dashboard.
 
 <p>
 <div id="dashboardButtons" hidden>
-<button class="uk-button uk-button-premium" onclick="showOrderOverview()">
+<button class="uk-button uk-button-premium" onclick="showOrderOverview(); updateUrlParam('tab', 'order')">
   New
 </button>&nbsp;
-<button class="uk-button uk-button-primary" onclick="showDetectionsOverview()">
+<button class="uk-button uk-button-primary" onclick="showDetectionsOverview(); updateUrlParam('tab', 'detections')">
   Detections overview
 </button>&nbsp;
-<button class="uk-button uk-button-primary" onclick="showInstallationsOverview()">
+<button class="uk-button uk-button-primary" onclick="showInstallationsOverview(); updateUrlParam('tab', 'installations')">
   Installations overview
 </button>&nbsp;
-<button class="uk-button uk-button-primary" onclick="showTools()">
+<button class="uk-button uk-button-primary" onclick="showTools(); updateUrlParam('tab', 'tools')">
   Tools
 </button>&nbsp;
 {% if jekyll.environment != 'enterprise' %}
@@ -39,9 +39,34 @@ description: The DSCM Premium users dashboard.
 <script>
   let token;
   var u = "https://" + domain + "/dashboard";
-  window.addEventListener('load', (event) => {
-    loadData();
-  });
+window.addEventListener('load', async (event) => {
+    await loadData();
+    // Now that data is loaded, check URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const tab = urlParams.get('tab');
+    if (tab) {
+      switch(tab) {
+        case 'order':
+          showOrderOverview();
+          break;
+        case 'detections':
+          showDetectionsOverview();
+          break;
+        case 'installations':
+          showInstallationsOverview();
+          break;
+        case 'tools':
+          showTools();
+          break;
+      }
+    }
+});
+
+  function updateUrlParam(key, value) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(key, value);
+    window.history.pushState({}, '', url);
+  }
 </script>
 
 <div id="dashboardTitle" hidden>

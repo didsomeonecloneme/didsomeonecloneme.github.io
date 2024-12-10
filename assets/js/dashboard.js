@@ -118,97 +118,104 @@ function loadData() {
   var idToken = urlParams.get('token');
   token = idToken;
 
-  $.ajax({
-    url: u,
-    dataType: 'json',
-    beforeSend: function (request) { request.setRequestHeader("Authorization", idToken); },
-    success: function (data) {
-      if (data.error && data.error === 'No Premium plan found.' && data.enterprise === "false") {
-        $('#loader').hide();
-        $('#dashboardTitle').html("❌ Access denied. No Premium plan found. <a href='/?plan=premium'>Sign up here</a> to get Premium.");
-        $('#dashboardTitle').removeAttr('hidden');
-      } else if (data.error && data.error === 'No Premium plan found.' && data.enterprise === "true")  {
-        $('#loader').hide();
-        $('#dashboardTitle').html("❌ Access denied. No account found.");
-        $('#dashboardTitle').removeAttr('hidden');
-      } else if (data.error) {
-        $('#loader').hide();
-        $('#dashboardTitle').html("❌ Error occurred. Your token may be expired. Please try to login again.");
-        $('#dashboardTitle').removeAttr('hidden');   
-      } else {
-        // Populate the history table
-        $('#history_table').DataTable({
-          data: data.data,
-          order: [[0, 'desc']],
-          columns: [
-            { data: 'Date' },
-            { data: 'Clone' },
-            { data: 'Website' },
-            { data: 'Statistics', render: function (data, type, row) { return data + ' views' } },
-            {
-              data: 'Automated analysis', render: function (data, type, row) {
-                if (data.startsWith('http')) {
-                  return '<a href="' + data + '" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Analysis</button></a>'
-                } else {
-                  return 'N/A';
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: u,
+      dataType: 'json',
+      beforeSend: function (request) { request.setRequestHeader("Authorization", idToken); },
+      success: function (data) {
+        if (data.error && data.error === 'No Premium plan found.' && data.enterprise === "false") {
+          $('#loader').hide();
+          $('#dashboardTitle').html("❌ Access denied. No Premium plan found. <a href='/?plan=premium'>Sign up here</a> to get Premium.");
+          $('#dashboardTitle').removeAttr('hidden');
+          resolve(data);
+        } else if (data.error && data.error === 'No Premium plan found.' && data.enterprise === "true")  {
+          $('#loader').hide();
+          $('#dashboardTitle').html("❌ Access denied. No account found.");
+          $('#dashboardTitle').removeAttr('hidden');
+          resolve(data);
+        } else if (data.error) {
+          $('#loader').hide();
+          $('#dashboardTitle').html("❌ Error occurred. Your token may be expired. Please try to login again.");
+          $('#dashboardTitle').removeAttr('hidden');   
+          resolve(data);
+        } else {
+          // Populate the history table
+          $('#history_table').DataTable({
+            data: data.data,
+            order: [[0, 'desc']],
+            columns: [
+              { data: 'Date' },
+              { data: 'Clone' },
+              { data: 'Website' },
+              { data: 'Statistics', render: function (data, type, row) { return data + ' views' } },
+              {
+                data: 'Automated analysis', render: function (data, type, row) {
+                  if (data.startsWith('http')) {
+                    return '<a href="' + data + '" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Analysis</button></a>'
+                  } else {
+                    return 'N/A';
+                  }
+                }
+              },
+              {
+                data: 'Status', render: function (data, type, row) {
+                  return data == "Offline" ? '<font color="red">' + data + '</font>' : '<font color="green">' + data + '</font>';
                 }
               }
-            },
-            {
-              data: 'Status', render: function (data, type, row) {
-                return data == "Offline" ? '<font color="red">' + data + '</font>' : '<font color="green">' + data + '</font>';
-              }
-            }
-          ]
-        });
+            ]
+          });
 
-        // Populate the installations table
-        $('#installations_table').DataTable({
-          data: data.installations,
-          order: [[0, 'desc']],
-          columns: [
-            { data: 'Protected website' },
-            { data: 'Personal link' },
-            { data: 'Description'},
-            {
-              data: 'Status', render: function (data, type, row) {
-                return data == "Online" ? '<font color="green">' + data + '</font>' : '<font color="red">' + data + '</font>';
-              }
-            },
-            { 
-              data: 'm365_logmon_enabled',
-              render: function (data, type, row) {
-                if (row.m365_logmon_auth === "") {
-                  return 'N/A';
+          // Populate the installations table
+          $('#installations_table').DataTable({
+            data: data.installations,
+            order: [[0, 'desc']],
+            columns: [
+              { data: 'Protected website' },
+              { data: 'Personal link' },
+              { data: 'Description'},
+              {
+                data: 'Status', render: function (data, type, row) {
+                  return data == "Online" ? '<font color="green">' + data + '</font>' : '<font color="red">' + data + '</font>';
                 }
-                return data ? '<font color="green">Enabled</font>' : '<font color="red">Disabled</font>';
+              },
+              { 
+                data: 'm365_logmon_enabled',
+                render: function (data, type, row) {
+                  if (row.m365_logmon_auth === "") {
+                    return 'N/A';
+                  }
+                  return data ? '<font color="green">Enabled</font>' : '<font color="red">Disabled</font>';
+                }
+              },
+              {
+                data: 'Webhook', render: function (data, type, row) {
+                  return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\', \'' + row.Filtered + '\', \'' + row.Description + '\', \'' + row.m365_logmon_enabled + '\', \'' + row.m365_logmon_auth + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
+                }
               }
-            },
-            {
-              data: 'Webhook', render: function (data, type, row) {
-                return '<a style="border-bottom: none;" onclick="openModal(\'' + row.ID + '\', \'' + data + '\', \'' + row.Mitigations + '\', \'' + row.AutomatedMitigation + '\', \'' + row.Filtered + '\', \'' + row.Description + '\', \'' + row.m365_logmon_enabled + '\', \'' + row.m365_logmon_auth + '\')" uk-toggle><button class="uk-button uk-button-primary uk-button-small">Configure</button></a>';
-              }
-            }
-          ]
-        });
+            ]
+          });
 
-        $('#users_table').DataTable();
-        $('#users').hide();
-        $('#installations_table_wrapper').hide();
-        $('#history_table_wrapper').hide();
-        $('#tools').hide();
-        $('#table').removeAttr('hidden');
-        $('#dashboardButtons').removeAttr('hidden');
-        $('#dashboardTitle').removeAttr('hidden');
-        $('#loader').hide();
-        $("a[href*='/login']").attr("href", "/logout").text("Logout");
-        $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
-        addAdminButton();
+          $('#users_table').DataTable();
+          $('#users').hide();
+          $('#installations_table_wrapper').hide();
+          $('#history_table_wrapper').hide();
+          $('#tools').hide();
+          $('#table').removeAttr('hidden');
+          $('#dashboardButtons').removeAttr('hidden');
+          $('#dashboardTitle').removeAttr('hidden');
+          $('#loader').hide();
+          $("a[href*='/login']").attr("href", "/logout").text("Logout");
+          $('#subscription_button').attr('onclick', 'location.href=\'' + data.stripe_portal + '\'');
+          addAdminButton();
+          resolve(data);
+        }
+      },
+      error: function (error) {
+        console.error(error);
+        reject(error);
       }
-    },
-    error: function (error) {
-      console.error(error);
-    }
+    });
   });
 }
 
