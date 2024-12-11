@@ -36,3 +36,4 @@
   - enterprise_configure_admin
   - enterprise_configure_webhook
   - enterprise_detection_sharing
+  - enterprise_tutorial_log_monitoring_app
