@@ -4,7 +4,7 @@ subtitle: This document describes how to enable Log Monitoring for Microsoft 365
 tags: [enable, log monitoring]
 ---
 
-Enabling Log Monitoring is possible via the DSCM Enterprise Dashboard. 
+Enabling Log Monitoring is possible via the DSCM Enterprise Dashboard. Please note that Log Monitoring requires an Entra ID Premium P1 or P2 license in the protected tenant.
 
 1. Login into the Enterprise Dashboard
 2. Open the "Installations overview" tab
