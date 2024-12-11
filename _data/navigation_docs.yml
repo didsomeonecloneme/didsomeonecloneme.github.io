@@ -37,3 +37,4 @@
   - enterprise_configure_webhook
   - enterprise_detection_sharing
   - enterprise_tutorial_log_monitoring_app
+  - enterprise_tutorial_enable_log_monitoring
