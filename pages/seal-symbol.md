@@ -36,6 +36,24 @@ permalink: /seal-symbol
         .subtitle {
             font-size: 18px;
             color: var(--themeSecondaryForeground);
+            background-color: #e8f5ff;
+            border: 1px solid #91d5ff;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px auto;
+            position: relative;
+            padding-left: 48px;
+            max-width: 25%;
+            width: fit-content;
+            min-width: 300px; /* Ensures readability on smaller screens */
+        }
+        .subtitle::before {
+            content: '\f05a';  /* Font Awesome info icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 20px;
+            color: #1890ff;
         }
         .subtitle a {
             color: #05c896;
@@ -88,7 +106,7 @@ permalink: /seal-symbol
     <div class="icon-box">
         <i class="fas fa-exclamation-triangle"></i>
     </div>
-    <p class="subtitle">Use the seal above to verify your Microsoft 365 login page.</p>
+    <p class="subtitle">Only if this symbol is visible on the Microsoft 365 login page, you know you're on the official login page. Do you have doubts? Don't enter any information and contact the helpdesk.</p>
     <script>
         microsoftTeams.initialize();
         microsoftTeams.getContext((context) => {
