@@ -7,7 +7,7 @@ permalink: /seal-symbol.html
 
 <html>
 <head>
-    <title>Tenant not found</title>
+    <title>Authenticity Seal</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@microsoft/teams-js@2.5.1/dist/MicrosoftTeams.min.js"></script>
