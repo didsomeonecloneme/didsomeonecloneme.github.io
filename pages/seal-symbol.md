@@ -2,7 +2,7 @@
 layout: login
 title: Seal Symbol
 width: small
-permalink: /seal-symbol.html
+permalink: /seal-symbol
 ---
 
 <html>

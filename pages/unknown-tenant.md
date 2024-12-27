@@ -2,7 +2,7 @@
 layout: login
 title: Unknown Tenant
 width: small
-permalink: /unknown-tenant.html
+permalink: /unknown-tenant
 ---
 
 <html>
