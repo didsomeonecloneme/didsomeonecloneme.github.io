@@ -140,7 +140,7 @@ permalink: /seal-symbol
             <div class="loading"></div>
             <i class="" style="display: none;"></i>
         </div>
-        <p class="subtitle">If this symbol is visible on the Microsoft 365 login page, you can be confident you're on the official site. Unsure? Avoid entering any information and contact the helpdesk for assistance.</p>
+        <p class="subtitle">If the symbol is missing on the Microsoft 365 login page, the site is malicious. Do not enter any information and contact the helpdesk for assistance.</p>
     </div>
     <script>
         // Add date formatting function
