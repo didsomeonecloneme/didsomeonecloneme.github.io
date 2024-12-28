@@ -33,11 +33,19 @@ permalink: /seal-symbol
         }
         .container {
             text-align: center;
+            background-color: #f5f5f5;
+            padding: 0.5em;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d1d1;
+            height: fit-content;
         }
         .title {
             font-size: 24px;
             font-weight: bold;
             color: #1a1a1a;
+            margin: 0;
+            line-height: 1;
         }
         .subtitle {
             font-size: 18px;
