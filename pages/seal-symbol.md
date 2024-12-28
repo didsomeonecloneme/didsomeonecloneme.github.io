@@ -1,5 +1,5 @@
 ---
-layout: login
+layout: empty
 title: Seal Symbol
 width: small
 permalink: /seal-symbol
