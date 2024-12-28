@@ -18,6 +18,30 @@ permalink: /seal-symbol
     <script src="/assets/js/dashboard.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        :root[data-theme="default"] {
+            --themePrimaryForeground: #242424;
+            --themeSecondaryForeground: #616161;
+            --themeAccentColor: #05c896;
+            --themeInfoBackground: #e8f5ff;
+            --themeInfoBorder: #91d5ff;
+            --themeInfoIcon: #1890ff;
+            --themeLinkColor: #05c896;
+            --themeIconBoxBorder: #05c896;
+            --themeIconBoxShadow: rgba(36, 36, 36, 0.15);
+        }
+
+        :root[data-theme="dark"] {
+            --themePrimaryForeground: #ffffff;
+            --themeSecondaryForeground: #d0d0d0;
+            --themeAccentColor: #0fe1aa;
+            --themeInfoBackground: #153247;
+            --themeInfoBorder: #15395b;
+            --themeInfoIcon: #3b9eff;
+            --themeLinkColor: #0fe1aa;
+            --themeIconBoxBorder: #0fe1aa;
+            --themeIconBoxShadow: rgba(255, 255, 255, 0.15);
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -39,8 +63,8 @@ permalink: /seal-symbol
         .subtitle {
             font-size: 18px;
             color: var(--themeSecondaryForeground);
-            background-color: #e8f5ff;
-            border: 1px solid #91d5ff;
+            background-color: var(--themeInfoBackground);
+            border: 1px solid var(--themeInfoBorder);
             border-radius: 8px;
             padding: 16px 20px;
             margin: 20px auto;
@@ -56,10 +80,10 @@ permalink: /seal-symbol
             font-weight: 900;
             position: absolute;
             left: 20px;
-            color: #1890ff;
+            color: var(--themeInfoIcon);
         }
         .subtitle a {
-            color: #05c896;
+            color: var(--themeLinkColor);
             text-decoration: none;
         }
         .subtitle a:hover {
@@ -68,7 +92,7 @@ permalink: /seal-symbol
         .icon-box {
             width: 160px;
             height: 160px;
-            border: 3px solid #05c896;
+            border: 3px solid var(--themeIconBoxBorder);
             border-radius: 12px;
             display: flex;
             justify-content: center;
@@ -84,7 +108,7 @@ permalink: /seal-symbol
             left: -8px;
             right: -8px;
             bottom: -8px;
-            border: 2px solid #05c896;
+            border: 2px solid var(--themeIconBoxBorder);
             border-radius: 16px;
             opacity: 0.3;
             pointer-events: none;
@@ -94,11 +118,11 @@ permalink: /seal-symbol
         }
         .icon-box:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 0 6px rgba(var(--themePrimaryForeground), 0.15);
+            box-shadow: 0 0 0 6px var(--themeIconBoxShadow);
         }
         .icon-box i {
             font-size: 64px;
-            color: #05c896;
+            color: var(--themeAccentColor);
         }
     </style>
 </head>
