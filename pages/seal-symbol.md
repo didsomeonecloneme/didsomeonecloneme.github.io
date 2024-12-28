@@ -11,6 +11,7 @@ permalink: /seal-symbol
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@microsoft/teams-js@2.5.1/dist/MicrosoftTeams.min.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fluentui/react-northstar@0.69.0/dist/next-northstar.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fluentui/react-northstar@0.69.0/dist/next-northstar.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -106,14 +107,51 @@ permalink: /seal-symbol
     <div class="icon-box">
         <i class="fas fa-exclamation-triangle"></i>
     </div>
-    <p class="subtitle">Only if this symbol is visible on the Microsoft 365 login page, you know you're on the official login page. Do you have doubts? Don't enter any information and contact the helpdesk.</p>
+    <p class="subtitle">If this symbol is visible on the Microsoft 365 login page, you can be confident you're on the official site. Unsure? Avoid entering any information and contact the helpdesk for assistance.</p>
     <script>
+        async function fetchAndUpdateSymbol() {
+            try {
+                // Get URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const token = urlParams.get('token');
+                
+                if (!token) {
+                    console.error('No token provided');
+                    return;
+                }
+
+                // Make API call
+                const response = await fetch(`https://${domain}/seal_display`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                
+                // Update the icon
+                const iconElement = document.querySelector('.icon-box i');
+                iconElement.className = data.symbol;
+            } catch (error) {
+                console.error('Error fetching symbol:', error);
+            }
+        }
+
+        // Initialize Teams and then fetch symbol
         microsoftTeams.initialize();
         microsoftTeams.getContext((context) => {
             if (context.theme) {
                 document.documentElement.setAttribute("data-theme", context.theme);
             }
+            // Fetch symbol after Teams initialization
+            fetchAndUpdateSymbol();
         });
+
         microsoftTeams.registerOnThemeChangeHandler((theme) => {
             document.documentElement.setAttribute("data-theme", theme);
         });
