@@ -171,11 +171,6 @@ permalink: /seal-symbol
 
         // Fetch symbol after Teams initialization
         fetchAndUpdateSymbol();
-
-        microsoftTeams.initialize();
-        microsoftTeams.getContext((context) => {
-            console.log(context.locale); // e.g., "en-US"
-        });
     </script>
 </body>
 </html>
