@@ -1,5 +1,5 @@
 ---
-layout: login
+layout: empty
 title: Unknown Tenant
 width: small
 permalink: /unknown-tenant
