@@ -23,28 +23,28 @@ permalink: /seal-symbol
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
         }
         .container {
             text-align: center;
-            background-color: #f5f5f5;
-            padding: 0.5em;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #d1d1d1;
-            height: fit-content;
+            background-color: white;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
         }
         .title {
             font-size: 24px;
             font-weight: bold;
             color: #1a1a1a;
-            margin: 0;
+            margin: 0 0 24px 0;
             line-height: 1;
         }
         .subtitle {
@@ -54,12 +54,12 @@ permalink: /seal-symbol
             border: 1px solid #b3d7ff;
             border-radius: 8px;
             padding: 16px 20px;
-            margin: 20px auto;
+            margin: 20px 0;
             position: relative;
             padding-left: 48px;
-            max-width: 25%;
-            width: fit-content;
-            min-width: 300px;
+            max-width: none;
+            width: auto;
+            min-width: auto;
         }
         .subtitle::before {
             content: '\f05a';
@@ -84,7 +84,7 @@ permalink: /seal-symbol
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 24px;
+            margin: 0 auto 24px auto;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -130,12 +130,12 @@ permalink: /seal-symbol
 <body>
     <div class="container">
         <p class="title">Authenticity Seal</p>
+        <div class="icon-box">
+            <div class="loading"></div>
+            <i class="" style="display: none;"></i>
+        </div>
+        <p class="subtitle">If this symbol is visible on the Microsoft 365 login page, you can be confident you're on the official site. Unsure? Avoid entering any information and contact the helpdesk for assistance.</p>
     </div>
-    <div class="icon-box">
-        <div class="loading"></div>
-        <i class="" style="display: none;"></i>
-    </div>
-    <p class="subtitle">If this symbol is visible on the Microsoft 365 login page, you can be confident you're on the official site. Unsure? Avoid entering any information and contact the helpdesk for assistance.</p>
     <script>
         async function fetchAndUpdateSymbol() {
             try {
