@@ -125,11 +125,17 @@ permalink: /seal-symbol
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .date-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin: -16px 0 24px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <p class="title">Authenticity Seal</p>
+        <p class="date-subtitle" id="current-date"></p>
         <div class="icon-box">
             <div class="loading"></div>
             <i class="" style="display: none;"></i>
@@ -137,6 +143,16 @@ permalink: /seal-symbol
         <p class="subtitle">If this symbol is visible on the Microsoft 365 login page, you can be confident you're on the official site. Unsure? Avoid entering any information and contact the helpdesk for assistance.</p>
     </div>
     <script>
+        // Add date formatting function
+        function formatDate(date) {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                          'July', 'August', 'September', 'October', 'November', 'December'];
+            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        // Set current date
+        document.getElementById('current-date').textContent = formatDate(new Date());
+
         async function fetchAndUpdateSymbol() {
             try {
                 // Show loading spinner, hide icon
