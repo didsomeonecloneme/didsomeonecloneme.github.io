@@ -141,13 +141,14 @@ permalink: /seal-symbol
             <i class="" style="display: none;"></i>
         </div>
         <p class="subtitle">If the symbol is missing on the Microsoft 365 login page, the site is malicious. Do not enter any information and contact the helpdesk for assistance.</p>
+        <p class="subtitle">This symbol changes every month.</p>
     </div>
     <script>
         // Add date formatting function
         function formatDate(date) {
             const months = ['January', 'February', 'March', 'April', 'May', 'June', 
                           'July', 'August', 'September', 'October', 'November', 'December'];
-            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+            return `${months[date.getMonth()]} ${date.getFullYear()}`;
         }
 
         // Set current date
