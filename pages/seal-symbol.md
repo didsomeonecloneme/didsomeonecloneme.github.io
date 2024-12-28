@@ -10,6 +10,9 @@ permalink: /seal-symbol
     <title>Authenticity Seal</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <script
     src="https://res.cdn.office.net/teams-js/2.32.0/js/MicrosoftTeams.min.js"
     integrity="sha384-TOLACGjmwQohHyLubBrUeaUjuqYYAxJsVKufxV6VWXWEQepFpamUASNMMIhgJmoW"
