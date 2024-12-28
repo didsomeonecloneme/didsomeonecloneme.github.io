@@ -10,6 +10,7 @@ permalink: /seal-symbol
     <title>Authenticity Seal</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/teams-js@2.5.1/dist/MicrosoftTeams.min.js"></script>
     <script src="/assets/js/dashboard.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
