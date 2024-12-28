@@ -22,27 +22,27 @@ permalink: /seal-symbol
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root[data-theme="default"] {
-            --themePrimaryForeground: #242424;
-            --themeSecondaryForeground: #616161;
+            --themePrimaryForeground: #1a1a1a;
+            --themeSecondaryForeground: #4a4a4a;
             --themeAccentColor: #05c896;
-            --themeInfoBackground: #e8f5ff;
-            --themeInfoBorder: #91d5ff;
-            --themeInfoIcon: #1890ff;
+            --themeInfoBackground: #f0f6ff;
+            --themeInfoBorder: #b3d7ff;
+            --themeInfoIcon: #05c896;
             --themeLinkColor: #05c896;
             --themeIconBoxBorder: #05c896;
-            --themeIconBoxShadow: rgba(36, 36, 36, 0.15);
+            --themeIconBoxShadow: rgba(0, 120, 212, 0.15);
         }
 
         :root[data-theme="dark"] {
             --themePrimaryForeground: #ffffff;
-            --themeSecondaryForeground: #d0d0d0;
-            --themeAccentColor: #0fe1aa;
-            --themeInfoBackground: #153247;
-            --themeInfoBorder: #15395b;
-            --themeInfoIcon: #3b9eff;
-            --themeLinkColor: #0fe1aa;
-            --themeIconBoxBorder: #0fe1aa;
-            --themeIconBoxShadow: rgba(255, 255, 255, 0.15);
+            --themeSecondaryForeground: #c8c8c8;
+            --themeAccentColor: #05c896;
+            --themeInfoBackground: #1f2941;
+            --themeInfoBorder: #2b3a57;
+            --themeInfoIcon: #05c896;
+            --themeLinkColor: #05c896;
+            --themeIconBoxBorder: #05c896;
+            --themeIconBoxShadow: rgba(76, 194, 255, 0.15);
         }
 
         body {
@@ -134,7 +134,7 @@ permalink: /seal-symbol
         <h1 class="title">Authenticity Seal</h1>
     </div>
     <div class="icon-box">
-        <i class="fas fa-exclamation-triangle"></i>
+        <i class=""></i>
     </div>
     <p class="subtitle">If this symbol is visible on the Microsoft 365 login page, you can be confident you're on the official site. Unsure? Avoid entering any information and contact the helpdesk for assistance.</p>
     <script>
@@ -172,18 +172,37 @@ permalink: /seal-symbol
         }
 
         // Initialize Teams and then fetch symbol
-        microsoftTeams.initialize();
-        microsoftTeams.getContext((context) => {
-            if (context.theme) {
-                document.documentElement.setAttribute("data-theme", context.theme);
-            }
-            // Fetch symbol after Teams initialization
-            fetchAndUpdateSymbol();
-        });
+        try {
+            microsoftTeams.initialize();
+            microsoftTeams.getContext((context) => {
+                try {
+                    if (context.theme) {
+                        document.documentElement.setAttribute("data-theme", context.theme);
+                    }
+                } catch (error) {
+                    console.error('Error setting initial theme:', error);
+                    // Fallback to default theme
+                    document.documentElement.setAttribute("data-theme", "default");
+                }
+            });
 
-        microsoftTeams.registerOnThemeChangeHandler((theme) => {
-            document.documentElement.setAttribute("data-theme", theme);
-        });
+            microsoftTeams.registerOnThemeChangeHandler((theme) => {
+                try {
+                    document.documentElement.setAttribute("data-theme", theme);
+                } catch (error) {
+                    console.error('Error handling theme change:', error);
+                    // Fallback to default theme
+                    document.documentElement.setAttribute("data-theme", "default");
+                }
+            });
+        } catch (error) {
+            console.error('Error initializing Microsoft Teams:', error);
+            // Fallback to default theme
+            document.documentElement.setAttribute("data-theme", "default");
+        }
+
+        // Fetch symbol after Teams initialization
+        fetchAndUpdateSymbol();
     </script>
 </body>
 </html>
