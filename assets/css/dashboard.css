@@ -53,10 +53,12 @@
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 /* The Close Button */
@@ -72,4 +74,88 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 10px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.icon-item:hover {
+  background-color: #f0f0f0;
+}
+
+.icon-item i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.icon-item.selected {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.icon-search {
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
+#iconPickerModal .modal-content {
+  width: 80%;
+  max-width: 800px;
+}
+
+.selected-icons {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+.selected-icon {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.selected-icon:hover {
+    background: #e0e0e0;
+}
+
+.selected-icon i {
+    margin-right: 5px;
+}
+
+.selected-icon .remove {
+    color: #ff0000;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 15px;
 }
