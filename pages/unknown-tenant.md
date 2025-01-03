@@ -23,6 +23,7 @@ permalink: /unknown-tenant
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            background-color: white;
         }
         .container {
             text-align: center;
