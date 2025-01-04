@@ -362,6 +362,13 @@ function storeSettingsForm(site, webhook, idToken, event, mitigate, description,
       var span = document.getElementById('filtering_enabled');
       span.innerHTML = '<font color="green">[ENABLED]</font>';
     }
+    if (sealSymbols === "undefined" || sealTenantId === "undefined") {
+      var span = document.getElementById('seal_enabled');
+      span.innerHTML = '<font color="red">[DISABLED]</font>';
+    } else {
+      var span = document.getElementById('seal_enabled');
+      span.innerHTML = '<font color="green">[ENABLED]</font>';
+    }
   })
   .fail(function(jqXHR) {
     let errorMessage = 'Error occurred: ';
