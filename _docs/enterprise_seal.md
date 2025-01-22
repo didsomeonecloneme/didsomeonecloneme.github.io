@@ -15,11 +15,11 @@ The Teams app requires the **User.Read** permission. This permission is used to 
 
 ### How to Add the Application to Teams
 1. Browse to the Microsoft 365 admin center at [https://admin.microsoft.com](https://admin.microsoft.com)
-2. Navigate to settings
+2. Navigate to Settings
 3. Select Integrated Apps
-4. Select Get Apps
-5. Search for didsomeoneclone.me
-6. Click on "Get it now"
+4. Select Upload custom apps
+5. Select Teams app and upload the [appPackage.prod.zip](https://didsomeoneclone.me/uploads/appPackage.prod.zip) file
+6. Click on "Next"
 7. On the Configuration page, click Next
 8. On the Assign Users page, click Entire organization
 9. On the Deployment page, Accept the permissions and click Next
@@ -30,8 +30,8 @@ The Teams app requires the **User.Read** permission. This permission is used to 
 2. Click Teams Apps
 3. Click Setup policies
 4. Click Global (Org-wide default) policy
-5. Under Installed Apps, click Add apps, and select didsomeoneclone.me
-6. Under Pinned Apps, click Add apps, and select didsomeoneclone.me
+5. Under Installed Apps, click Add apps, and search / select didsomeoneclone.me
+6. Under Pinned Apps, click Add apps, and search / select didsomeoneclone.me
 7. Click Save and Confirm
 
 ### How to Get Support
