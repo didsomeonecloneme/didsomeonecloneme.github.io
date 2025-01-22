@@ -14,6 +14,7 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
   {% include hook-head.html %}
+  {% if jekyll.environment != 'enterprise' %}
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,6 +22,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-KG5QRJTP');</script>
   <!-- End Google Tag Manager -->
+  {% endif %}
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/countUp.umd.js"></script>
   <script src="https://js.sentry-cdn.com/a474f14cc20ee3ac66c1d3ab16e08dac.min.js" crossorigin="anonymous"></script>
