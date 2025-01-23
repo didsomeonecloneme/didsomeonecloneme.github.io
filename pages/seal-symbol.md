@@ -63,7 +63,7 @@ permalink: /seal-symbol
         }
         .subtitle::before {
             content: '\f05a';
-            font-family: 'Font Awesome 6 Free';
+            font-family: 'Font Awesome 6 Pro';
             font-weight: 900;
             position: absolute;
             left: 20px;
