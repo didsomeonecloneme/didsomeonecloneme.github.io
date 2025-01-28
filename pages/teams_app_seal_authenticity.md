@@ -7,6 +7,8 @@ subtitle: How to verify you're logging into the real Microsoft login page
 tags: [seal, authenticity, security]
 ---
 
+<a href="javascript:history.back()" style="color: #0078d4; cursor: pointer; text-decoration: none !important; border-bottom: none !important; box-shadow: none !important;">&#8592; Back</a>
+
 ### What is the Authenticity Seal?
 The Authenticity Seal is a security feature that helps you verify you're on the genuine Microsoft login page. Think of it as a unique "watermark" that appears on official Microsoft login pages. Each organization has its own unique seal. The symbol changes every month.
 
