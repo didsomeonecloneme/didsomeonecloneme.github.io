@@ -130,6 +130,16 @@ permalink: /seal-symbol
             color: #666;
             margin: -16px 0 24px 0;
         }
+        .help-link {
+            display: block;
+            color: #666666;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 16px;
+        }
+        .help-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -142,6 +152,7 @@ permalink: /seal-symbol
         </div>
         <p class="subtitle">If the symbol is missing on the Microsoft 365 login page, the site is malicious. Do not enter any information and contact the helpdesk for assistance.</p>
         <p class="subtitle">This symbol changes every month.</p>
+        <a href="/docs/enterprise_seal_authenticity/" class="help-link">More information</a>
     </div>
     <script>
         // Add date formatting function
