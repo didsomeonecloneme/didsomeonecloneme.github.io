@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+    {% include head.html %}
+
+    <body>
+        <div class="uk-section">
+            <div class="uk-container{% if page.width %} uk-container-{{page.width}}{% endif %}">
+        
+                <article class="uk-article">
+        
+                    <div class="article-content link-primary">
+                        {{ content }}
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    {% include hook-pre-closing-body.html %}
+
+    </body>
+
+</html>
