@@ -29,5 +29,5 @@ The screenshot below shows a potentially dangerous fake login page. Notice it's 
 
 ### Important Security Rules
 1. **No Seal = No Login**: If you don't see the correct Authenticity Seal, do not enter your credentials
-2. **Red Warning = Stop**: If you see any red warning messages, stop immediately and do not proceed
+2. **Red Warning = No Login**: If you see any red warning messages, stop immediately and do not proceed
 3. **When in Doubt**: Contact your IT support team if you're unsure about a login page
