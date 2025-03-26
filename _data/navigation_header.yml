@@ -24,3 +24,7 @@ right:
   - title: Premium Dashboard
     url: /login/
     button: success
+
+  - title: To Attic 🪜
+    url: https://atticsecurity.com/en/
+    button: premium
