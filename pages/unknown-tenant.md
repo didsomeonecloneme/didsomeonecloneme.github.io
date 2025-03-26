@@ -38,7 +38,7 @@ permalink: /unknown-tenant
             color: var(--themeSecondaryForeground);
         }
         .subtitle a {
-            color: #05c896;
+            color: #324E41;
             text-decoration: none;
         }
         .subtitle a:hover {

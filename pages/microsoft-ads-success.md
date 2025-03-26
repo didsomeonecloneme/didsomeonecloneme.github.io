@@ -11,7 +11,7 @@ tags:
 ---
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<div style="background-color:#05c896;height:100%;width:100%;text-align: center;color:#fff">
+<div style="background-color:#324E41;height:100%;width:100%;text-align: center;color:#fff">
 <p><img style="width:50%;margin:50px" src="/assets/img/blogs/ok-check.png"></p>
 <p>DSCM installed successfully. Whenever a phishing attack is discovered, we will contact you via email.</p>
 </div>

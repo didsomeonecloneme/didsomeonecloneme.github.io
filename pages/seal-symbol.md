@@ -67,10 +67,10 @@ permalink: /seal-symbol
             font-weight: 900;
             position: absolute;
             left: 20px;
-            color: #05c896;
+            color: #324E41;
         }
         .subtitle a {
-            color: #05c896;
+            color: #324E41;
             text-decoration: none;
         }
         .subtitle a:hover {
@@ -79,7 +79,7 @@ permalink: /seal-symbol
         .icon-box {
             width: 160px;
             height: 160px;
-            border: 3px solid #05c896;
+            border: 3px solid #324E41;
             border-radius: 12px;
             display: flex;
             justify-content: center;
@@ -95,7 +95,7 @@ permalink: /seal-symbol
             left: -8px;
             right: -8px;
             bottom: -8px;
-            border: 2px solid #05c896;
+            border: 2px solid #324E41;
             border-radius: 16px;
             opacity: 0.3;
             pointer-events: none;
@@ -109,12 +109,12 @@ permalink: /seal-symbol
         }
         .icon-box i {
             font-size: 64px;
-            color: #05c896;
+            color: #324E41;
         }
         /* Add new loading spinner styles */
         .loading {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #05c896;
+            border-top: 4px solid #324E41;
             border-radius: 50%;
             width: 40px;
             height: 40px;

@@ -145,12 +145,26 @@ function loadData() {
             data: data.data,
             order: [[0, 'desc']],
             columns: [
-              { data: 'Date' },
+              { 
+                data: 'Date',
+                render: function(data, type, row) {
+                  if (type === 'display') {
+                    return data;
+                  }
+                  if (type === 'sort') {
+                    // Convert DD-MM-YYYY to YYYY-MM-DD for sorting
+                    const parts = data.split('-');
+                    return `${parts[2]}-${parts[1]}-${parts[0]}`;
+                  }
+                  return data;
+                }
+              },
               { data: 'Clone' },
               { data: 'Website' },
               { data: 'Statistics', render: function (data, type, row) { return data + ' views' } },
               {
-                data: 'Automated analysis', render: function (data, type, row) {
+                data: 'Automated analysis', 
+                render: function (data, type, row) {
                   if (data.startsWith('http')) {
                     return '<a href="' + data + '" style="border-bottom:0px;" target="_blank"><button class="uk-button uk-button-primary uk-button-small">Analysis</button></a>'
                   } else {
@@ -159,7 +173,8 @@ function loadData() {
                 }
               },
               {
-                data: 'Status', render: function (data, type, row) {
+                data: 'Status', 
+                render: function (data, type, row) {
                   return data == "Offline" ? '<font color="red">' + data + '</font>' : '<font color="green">' + data + '</font>';
                 }
               }
