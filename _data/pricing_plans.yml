@@ -62,12 +62,10 @@
       link: /docs/enterprise_hosted_in_your_tenant/
     - name: ✅ Full control over your data
       link: /docs/enterprise_full_control/
-    - name: ✅ Managed by us
-      link: /docs/enterprise_managed_by_us/
+    - name: ✅ Log Monitoring
+      link: /docs/enterprise_log_monitoring/
     - name: ✅ Private detections
       link: /docs/detections
-    - name: ✅ Support
-      link: /docs/enterprise_support/
     - name: ✅ Custom domains
       link: /docs/enterprise_custom_domain/
     - name: ✅ Customize warning styling
@@ -76,4 +74,6 @@
       link: /docs/enterprise_customizations/
     - name: ✅ Authenticity Seal
       link: /docs/enterprise_seal_authenticity/
+    - name: ✅ Support
+      link: /docs/enterprise_support/
   price: 500

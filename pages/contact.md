@@ -25,6 +25,7 @@ DSCM is developed by <a href="https://www.atticsecurity.com/">Attic Security</a>
 
 ## Address
 <div class="address-details">
+Attic B.V.<br>
 Molenstraat 36<br>
 4761 CL Zevenbergen<br>
 The Netherlands

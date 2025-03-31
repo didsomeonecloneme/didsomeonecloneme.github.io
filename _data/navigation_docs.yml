@@ -28,6 +28,7 @@
   - enterprise_custom_warning_styling
   - enterprise_customizations
   - enterprise_seal_authenticity
+  - enterprise_log_monitoring
 
 - title: Tutorials
   docs:
