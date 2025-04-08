@@ -15,6 +15,8 @@ permalink: /terms-of-use/
 
 3) If you use the service for a purpose that we don’t allow, you breach the policy, and we may suspend or terminate your use of the service.
 
+4) You use this service at your own risk, and we are not liable for any damages, losses, or consequences that may arise from its use.
+
 ### Your information
 
 1) We don't sell the information you provide to us when you use this service.
