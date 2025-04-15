@@ -34,6 +34,7 @@ In order to use the Log monitoring feature, you need to configure a Log Monitori
 20. Repeat step 15-19 for the following permissions:
     - User.EnableDisableAccount.All
     - User.RevokeSessions.All
+    - ThreatHunting.Read.All
 21. Click on "Certificates & secrets"
 22. Click on "New client secret"
 23. Fill in the required fields:
