@@ -4,6 +4,11 @@
     {% include head.html %}
 
     <body>
+        {% if jekyll.environment != 'enterprise' %}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://sst.didsomeoneclone.me/ns.html?id=GTM-KG5QRJTP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        {% endif %}
         {% if page.hero %}
             {% if jekyll.environment != 'enterprise' %}
                 {% include hero.html %}
