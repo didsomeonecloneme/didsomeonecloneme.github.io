@@ -369,6 +369,13 @@ window.addEventListener('load', async (event) => {
           >
             Save Changes
           </button>
+          <button 
+            class="uk-button uk-button-danger" 
+            style="margin-left: 10px;"
+            onclick="confirmDelete(document.getElementById('site').value, event)"
+          >
+            Delete Link
+          </button>
         </div>
         <p id="messageLabel"></p>
       </form>
@@ -395,6 +402,33 @@ window.addEventListener('load', async (event) => {
       //modal.style.display = "none";
       location.reload();
     }
+  }
+
+  function confirmDelete(siteId, event) {
+    if (event) {
+      event.preventDefault();
+    }
+    
+    if (confirm('Are you sure you want to delete this link? This action cannot be undone.')) {
+      var url = u + '?action=delete_link&site=' + siteId;
+      $.ajax({
+        'url': url,
+        'type': "GET",
+        'dataSrc': 'data',
+        'beforeSend': function (request) { 
+          request.setRequestHeader("Authorization", token); 
+        },
+        'success': function() {
+          modal.style.display = "none";
+          location.reload();
+        },
+        'error': function (jqXHR, textStatus, errorThrown) {
+          console.error('Error:', errorThrown);
+          alert('Failed to delete the link. Please try again.');
+        }
+      });
+    }
+    return false;
   }
 </script>
 
