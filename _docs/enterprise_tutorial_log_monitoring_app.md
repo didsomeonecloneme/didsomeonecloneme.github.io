@@ -33,19 +33,12 @@ In order to use the Log monitoring feature, you need to configure a Log Monitori
 19. Click on "Add permissions"
 20. Repeat step 15-19 for the following permissions:
     - ThreatHunting.Read.All
-21. Click on "Add a permission"
-22. Click on "Microsoft Graph"
-23. Click on "Delegated permissions"
-24. Click on "User.EnableDisableAccount.All"
-25. Click on "Add permissions"
-26. Repeat step 21-25 for the following permissions:
-    - User.RevokeSessions.All
-27. Click on "Certificates & secrets"
-28. Click on "New client secret"
-29. Fill in the required fields:
+21. Click on "Certificates & secrets"
+22. Click on "New client secret"
+23. Fill in the required fields:
     - Description: `didsomeoneclone.me Log Monitoring App`
     - Expires: `730 days (24 months)`
-30. Click on "Add"
-31. Copy the "Client secret" and "Client ID".
+24. Click on "Add"
+25. Copy the "Client secret" and "Client ID".
 
 Email the Client ID and Client Secret to contact@didsomeoneclone.me. We will enable Log Monitoring in your DSCM Enterprise solution.
