@@ -263,11 +263,7 @@ window.addEventListener('load', async (event) => {
     });
   </script>
   <p>
-    Total: <span id="total">€10 / month</span>
-  </p>
-  <p>
-    <div id="submitButton"><a id="price_period" class="uk-button uk-button-success" style="font-size: 1.125rem; color: #ffffff; border-bottom: 0px" onclick="togglePeriod()">Pay Annually</a>
-    </div>
+    Total: <span id="total">€25 / month</span>
   </p>
 </div>
 {% endif %}
