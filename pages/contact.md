@@ -34,5 +34,5 @@ The Netherlands
 ## Feedback
 Want to share feedback with us? Please use our <a href="https://zolderbv.typeform.com/dscm-feedback">feedback form</a>.
 
-## Want to become an affiliate?
-<a href="https://atticsecurity.lemonsqueezy.com/affiliates">Sign up here</a>
+## Affiliates
+Want to become an affiliate? Sign up <a href="https://atticsecurity.lemonsqueezy.com/affiliates">here</a>
